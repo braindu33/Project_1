@@ -6,8 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     
     [SerializeField] private float speed = 10;
-    [SerializeField] private float minSpeed = 4;
-    [SerializeField] private float maxSpeed = 6;
     [SerializeField] private float minRotation = -90;
     [SerializeField] private float maxRotation = 90;
     [SerializeField] private GameObject head;
@@ -16,6 +14,7 @@ public class PlayerController : MonoBehaviour
     
     private Vector3 _trackNormal = Vector3.up;
     private Vector3 _newTrackNormal = Vector3.up;
+    
     private Vector3 _movementX;
     private Vector3 _movementZ;
     
@@ -28,6 +27,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector3 speedVector = Vector3.zero;
+        
         float horizontalAxis = Input.GetAxis("Horizontal");
         float verticalAxis = Input.GetAxis("Vertical");
 
