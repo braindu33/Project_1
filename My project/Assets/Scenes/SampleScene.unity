@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -173,36 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
---- !u!114 &636308636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636308627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d9b055c3ac65614fb46f6110b2f5af3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 636308627}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  buttonUp:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &737448421
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3177872215963829610, guid: 2878f494d941f0c4fad88fac6b35f846, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3177872215963829610, guid: 2878f494d941f0c4fad88fac6b35f846, type: 3}
       propertyPath: m_LocalPosition.x
@@ -595,6 +565,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2560007502373810076, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
+      propertyPath: m_Size.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560007502373810076, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
+      propertyPath: m_Size.y
+      value: 0.85814065
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560007502373810076, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
+      propertyPath: m_Size.z
+      value: 0.78483784
+      objectReference: {fileID: 0}
     - target: {fileID: 2560007503080239514, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
       propertyPath: m_Name
       value: Rock
@@ -609,7 +591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2560007503080239517, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.47
+      value: 0.762
       objectReference: {fileID: 0}
     - target: {fileID: 2560007503080239517, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -646,6 +628,18 @@ PrefabInstance:
     - target: {fileID: 2560007503230107379, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560007503954456004, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
+      propertyPath: m_Size.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560007503954456004, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8467414
+      objectReference: {fileID: 0}
+    - target: {fileID: 2560007503954456004, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
+      propertyPath: m_Size.z
+      value: 0.7788744
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7132153983c408d4da3da88714fd7b55, type: 3}
