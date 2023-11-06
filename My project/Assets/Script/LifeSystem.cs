@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LifeSystem : MonoBehaviour
@@ -12,7 +13,7 @@ public class LifeSystem : MonoBehaviour
         currentLife = maxLife;
     }
 
-    public void SetLife(int newLife)
+    private void SetLife(int newLife)
     {
         // Set the object's life to a specific value
         currentLife = Mathf.Clamp(newLife, 0, maxLife);

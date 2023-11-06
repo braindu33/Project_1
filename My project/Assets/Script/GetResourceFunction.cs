@@ -11,7 +11,7 @@ public class GetResourceFunction : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
