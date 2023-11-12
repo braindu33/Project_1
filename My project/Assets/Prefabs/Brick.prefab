@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4190140487850741529}
   - component: {fileID: 4190140487850741530}
   - component: {fileID: 4190140487850741531}
+  - component: {fileID: 1518726588679832160}
   m_Layer: 0
   m_Name: Brick
-  m_TagString: Untagged
+  m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,3 +114,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 10
   index: 1
+--- !u!114 &1518726588679832160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190140487850741535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2829698a6aeae944296fcc2416c607cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotate: {x: 0, y: 90, z: 0}
