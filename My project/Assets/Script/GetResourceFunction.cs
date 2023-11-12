@@ -24,8 +24,6 @@ public class GetResourceFunction : MonoBehaviour
                 {
                     Inventory.Instance.GetResource(index).AddResource(value);
                     Destroy(gameObject);
-        
-                    Debug.Log("The resource is take");
                 }
             }
         }

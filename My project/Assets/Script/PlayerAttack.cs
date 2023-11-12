@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField]
-    private float attackRange = 3.0f; // The range for the player's attack
+    [SerializeField] private float attackRange = 3.0f; // The range for the player's attack
 
-    [SerializeField]
-    private int attackForce = 10;     // The attack force (life points per attack)
+    [SerializeField] private int attackForce = 10;     // The attack force (life points per attack)
 
     void Update()
     {
@@ -24,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
                 if (lifeSystem != null)
                 {
                     // Perform an attack on the object with a "LifeSystem"
-                    lifeSystem.TakeDamage(attackForce);
+                    lifeSystem.Decrease(attackForce);
                 }
             }
         }
