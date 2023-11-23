@@ -8,7 +8,7 @@ using UnityEngine;
 public class InvetorySysteme : MonoBehaviour
 {
     [SerializeField] private InventoryDisplay display;
-    private InventoryData _data;
+    [SerializeField] private InventoryData _data;
 
     private void Awake()
     {

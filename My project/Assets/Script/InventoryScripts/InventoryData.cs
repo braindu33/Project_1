@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,20 +11,38 @@ public class InventoryData
         items = new Item[slotCount];
     }
     
-    public Item[] items { private set; get; }
+    [field : SerializeField] public Item[] items { private set; get; }
 
     public bool SlotAvailable(Item itemToAdd)
     {
-        throw new System.NotImplementedException();
+        foreach (var item in items)
+        {
+            if (item.AvailableFor(itemToAdd)) return true;
+        }
+
+        return false;
     }
 
-    public Item AddItem(Item itemToAdd)
+    public void AddItem(Item itemToAdd)
     {
-        throw new System.NotImplementedException();
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (itemToAdd.Empty) return;
+            
+            if (items[i].AvailableFor(itemToAdd))
+            {
+                items[i].Merge(ref itemToAdd);
+            }
+        }
     }
 
-    public Item Pick(int sloID)
+    public Item Pick(int slotID)
     {
-        throw new System.NotImplementedException();
+        if(slotID > items.Length) throw new System.Exception($"Id {slotID} out of inventory");
+
+        Item item = items[slotID];
+        items[slotID] = new Item();
+
+        return item;
     }
 }
