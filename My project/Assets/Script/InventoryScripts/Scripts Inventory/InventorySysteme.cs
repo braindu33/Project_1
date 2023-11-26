@@ -4,24 +4,35 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector.Editor.Drawers;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class InvetorySysteme : MonoBehaviour
+public class InventorySysteme : MonoBehaviour
 {
     [SerializeField] private InventoryDisplay display;
-    [SerializeField] private InventoryData _data;
+    
+    private InventoryData _data;
 
     private void Awake()
     {
         int slotCount = display.Initialize();
 
         _data = new InventoryData(slotCount);
+
+        display.UpdateDisplay(_data.items);
     }
+
+    private void Update()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
 
     public Item AddItem(Item item)
     {
         if (!_data.SlotAvailable(item)) return item;
 
-        item = _data.AddItem(item);
+        _data.AddItem(ref item);
         
         display.UpdateDisplay(_data.items);
 

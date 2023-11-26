@@ -13,11 +13,11 @@ public struct Item
     {
         if (Full) return;
 
-        if (data == null) data = other.data;
+        if (Empty) data = other.data;
 
-        if (other.data != data) throw new System.Exception("Try to merge different types items.");
+        if (other.Data != data) throw new System.Exception("Try to merge different types items.");
 
-        int total = other.count = count;
+        int total = other.count + count;
 
         if (total <= data.stackMaxCount)
         {
@@ -35,4 +35,6 @@ public struct Item
 
     public bool Full => data && count >= data.stackMaxCount;
     public bool Empty => count == 0 || data == null;
+
+    public int Count => count;
 }

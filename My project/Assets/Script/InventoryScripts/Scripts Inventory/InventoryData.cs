@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 public class InventoryData
 {
     public InventoryData(int slotCount)
@@ -11,7 +10,7 @@ public class InventoryData
         items = new Item[slotCount];
     }
     
-    [field : SerializeField] public Item[] items { private set; get; }
+    public Item[] items { private set; get; }
 
     public bool SlotAvailable(Item itemToAdd)
     {
@@ -23,7 +22,7 @@ public class InventoryData
         return false;
     }
 
-    public void AddItem(Item itemToAdd)
+    public void AddItem(ref Item itemToAdd)
     {
         for (int i = 0; i < items.Length; i++)
         {
