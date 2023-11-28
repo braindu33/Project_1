@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class InventoryDisplay : MonoBehaviour
 {
+    private int _draggedSlotIndex;
+    
+    private InventorySysteme _inventory;
+    
     private Slot[] _slots;
     
-    public int Initialize()
+    public int Initialize(InventorySysteme inventory)
     {
         _slots = GetComponentsInChildren<Slot>();
+        _inventory = inventory;
 
         for (int i = 0; i < _slots.Length; i++)
         {
@@ -20,14 +25,25 @@ public class InventoryDisplay : MonoBehaviour
 
     public void UpdateDisplay(Item[] items)
     {
-        for (int i = 0; i < _slots.Length; i++)
+        for (var i = 0; i < _slots.Length; i++)
         {
             _slots[i].UpdateDisplay(items[i]);
         }
     }
 
+    #region Inputs
+
     public void ClickSlot(int index)
     {
         Debug.Log($"Click on slot : {index}");
     }
+
+    public void DragSlot(int index) => _draggedSlotIndex = index;
+
+    public void DropOnSlot(int index)
+    {
+        _inventory.SwapSlots(_draggedSlotIndex, index);
+    }
+
+    #endregion
 }

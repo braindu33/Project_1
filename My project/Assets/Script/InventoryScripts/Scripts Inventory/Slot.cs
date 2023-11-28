@@ -3,10 +3,12 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
     private int _index;
-
+    private Vector3 _initialImageLocalPosition;
+    
+    
     [SerializeField] private TextMeshProUGUI itemCountText;
     [SerializeField] private Image itemImage;
     
@@ -49,17 +51,33 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
         print("Begin : " + _index);
+        
+        _inventoryDisplay.DragSlot(_index);
+        
+        _initialImageLocalPosition = itemImage.transform.localPosition;
+        itemImage.transform.SetParent(_inventoryDisplay.transform);
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
         print("Drag : " + _index);
+
+        itemImage.transform.position = eventData.position;
     }
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         print("End : " + _index);
+
+        itemImage.transform.SetParent(transform);
+        itemImage.transform.localPosition = _initialImageLocalPosition;
     }
-    
+
+    void IDropHandler.OnDrop(PointerEventData eventData)
+    {
+        print("Drop : " + _index);
+        
+        _inventoryDisplay.DropOnSlot(_index);
+    }
     #endregion
 }

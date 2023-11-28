@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f2408784bc0ed49b6fedf286c7294a, type: 3}
   m_Name: A
   m_EditorClassIdentifier: 
-  itemName: A
-  stackMaxCount: 50
-  icon: {fileID: 21300000, guid: 3327883601f567a4c8c3a724be953afa, type: 3}
+  itemName: Bois
+  stackMaxCount: 10
+  icon: {fileID: 21300000, guid: 3c35e59842ffd3c41805ad8c4070e5d4, type: 3}

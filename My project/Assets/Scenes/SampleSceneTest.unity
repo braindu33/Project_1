@@ -1018,11 +1018,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToPush:
-    count: 10
+    count: 15
     data: {fileID: 11400000, guid: 321648c792dfc1f44bc072d327c617d4, type: 2}
-  itemToPick:
-    count: 2
-    data: {fileID: 11400000, guid: 321648c792dfc1f44bc072d327c617d4, type: 2}
+  pickedItem:
+    count: 0
+    data: {fileID: 0}
 --- !u!114 &1061456985
 MonoBehaviour:
   m_ObjectHideFlags: 0
