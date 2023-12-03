@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class InventoryDisplay : MonoBehaviour
 {
-    private int _draggedSlotIndex;
+    [SerializeField] private InventoryContextMenu contextMenu;
     
+    private int _draggedSlotIndex;
+
     private InventorySysteme _inventory;
     
     private Slot[] _slots;
@@ -14,6 +18,8 @@ public class InventoryDisplay : MonoBehaviour
     {
         _slots = GetComponentsInChildren<Slot>();
         _inventory = inventory;
+
+        contextMenu.Init(inventory );
 
         for (int i = 0; i < _slots.Length; i++)
         {
@@ -35,7 +41,7 @@ public class InventoryDisplay : MonoBehaviour
 
     public void ClickSlot(int index)
     {
-        Debug.Log($"Click on slot : {index}");
+        contextMenu.Select(index, _slots[index]);
     }
 
     public void DragSlot(int index) => _draggedSlotIndex = index;

@@ -1,9 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Sirenix.OdinInspector.Editor.Drawers;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,6 +8,10 @@ public class InventorySysteme : MonoBehaviour
     
     private InventoryData _data;
 
+    private InventoryContext _context;
+    
+    public static InventorySysteme Instance { get; private set;}
+
     private void Awake()
     {
         var slotCount = display.Initialize(this);
@@ -20,6 +19,8 @@ public class InventorySysteme : MonoBehaviour
         _data = new InventoryData(slotCount);
 
         display.UpdateDisplay(_data.Items);
+
+        Instance = this;
     }
 
     private void Update()
@@ -55,4 +56,7 @@ public class InventorySysteme : MonoBehaviour
 
         display.UpdateDisplay(_data.Items);
     }
+
+    public Item[] Data => _data.Items;
+    public InventoryContext Context => _context;
 }

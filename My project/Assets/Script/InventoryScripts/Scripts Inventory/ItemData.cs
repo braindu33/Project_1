@@ -1,11 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Data;
+using System.Runtime.CompilerServices;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Item Data")]
+[CreateAssetMenu(menuName = "Items/Item Data")]
 public class ItemData : ScriptableObject
 {
     [SerializeField] public string itemName;
-    [SerializeField] public int stackMaxCount;
+    
+    [SerializeField] public int stackMaxCount = 1;
+    
     [SerializeField] public Sprite icon;
 }
