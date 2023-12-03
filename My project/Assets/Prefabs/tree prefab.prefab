@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8681970622216263180}
   m_Layer: 0
   m_Name: tree prefab
-  m_TagString: Untagged
+  m_TagString: tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLife: 150
+  lifeReachedMin:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &8681970622216263180
 BoxCollider:
   m_ObjectHideFlags: 0
