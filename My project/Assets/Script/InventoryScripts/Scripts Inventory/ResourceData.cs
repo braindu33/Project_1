@@ -4,8 +4,8 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Items/Item Data")]
-public class ItemData : ScriptableObject
+[CreateAssetMenu(menuName = "Resources/Resource Data")]
+public class ResourceData : ScriptableObject
 {
     [SerializeField] public string itemName;
     

@@ -26,7 +26,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     }
 
-    public void UpdateDisplay(Item item)
+    public void UpdateDisplay(Resource item)
     {
         if (!item.Empty)
         {

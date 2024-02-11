@@ -8,12 +8,12 @@ public class InventoryData
 {
     public InventoryData(int slotCount)
     {
-        Items = new Item[slotCount];
+        Items = new Resource[slotCount];
     }
     
-    public Item[] Items { private set; get; }
+    public Resource[] Items { private set; get; }
 
-    public bool SlotAvailable(Item itemToAdd)
+    public bool SlotAvailable(Resource itemToAdd)
     {
         foreach (var item in Items)
         {
@@ -23,7 +23,7 @@ public class InventoryData
         return false;
     }
 
-    public void AddItem(ref Item itemToAdd)
+    public void AddItem(ref Resource itemToAdd)
     {
         for (int i = 0; i < Items.Length; i++)
         {
@@ -36,12 +36,12 @@ public class InventoryData
         }
     }
 
-    public Item Pick(int slotID)
+    public Resource Pick(int slotID)
     {
         if(slotID > Items.Length) throw new System.Exception($"Id {slotID} out of inventory");
 
-        Item item = Items[slotID];
-        Items[slotID] = new Item();
+        Resource item = Items[slotID];
+        Items[slotID] = new Resource();
 
         return item;
     }

@@ -19,4 +19,9 @@ public class Inventory : MonoBehaviour
     {
         return resources[index];
     }
+    
+    public bool RemoveResource(int index, int resourceToRemove)
+    {
+        return resources[index].RemoveResource(resourceToRemove);
+    }
 }

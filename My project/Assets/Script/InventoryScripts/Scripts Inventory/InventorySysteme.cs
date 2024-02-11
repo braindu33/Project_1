@@ -8,8 +8,6 @@ public class InventorySysteme : MonoBehaviour
     
     private InventoryData _data;
 
-    private InventoryContext _context;
-    
     public static InventorySysteme Instance { get; private set;}
 
     private void Awake()
@@ -30,7 +28,7 @@ public class InventorySysteme : MonoBehaviour
     }
 
 
-    public Item AddItem(Item item)
+    public Resource AddItem(Resource item)
     {
         if (!_data.SlotAvailable(item)) return item;
 
@@ -41,7 +39,7 @@ public class InventorySysteme : MonoBehaviour
         return item;
     }
 
-    public Item PickItem(int slotID)
+    public Resource PickItem(int slotID)
     {
         var result = _data.Pick(slotID);
         
@@ -57,6 +55,5 @@ public class InventorySysteme : MonoBehaviour
         display.UpdateDisplay(_data.Items);
     }
 
-    public Item[] Data => _data.Items;
-    public InventoryContext Context => _context;
+    public Resource[] Data => _data.Items;
 }

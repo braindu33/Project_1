@@ -29,7 +29,7 @@ public class InventoryDisplay : MonoBehaviour
         return _slots.Length;
     }
 
-    public void UpdateDisplay(Item[] items)
+    public void UpdateDisplay(Resource[] items)
     {
         for (var i = 0; i < _slots.Length; i++)
         {

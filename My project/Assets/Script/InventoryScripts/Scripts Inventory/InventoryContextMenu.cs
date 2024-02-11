@@ -22,8 +22,8 @@ public class InventoryContextMenu : MonoBehaviour
 
     public void Select(int slotID, Slot slot)
     {
-        Item slotItem = _inventory.Data[slotID];
-        ItemData data = slotItem.Data;
+        Resource slotItem = _inventory.Data[slotID];
+        ResourceData data = slotItem.Data;
 
         if (slotItem.Empty)
         {

@@ -19,6 +19,4 @@ public class ResourceUIController : MonoBehaviour
     {
         textResources[index].text = value.ToString();
     }
-    
-    
 }

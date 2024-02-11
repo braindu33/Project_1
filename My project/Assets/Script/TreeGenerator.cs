@@ -5,7 +5,7 @@ using UnityEngine;
 public class TreeGenerator : MonoBehaviour
 {
     public GameObject treeObject;
-    public GameObject treesInWorldObject;
+    //public GameObject treesInWorldObject;
 
     public int treeAmount;
 
@@ -21,7 +21,7 @@ public class TreeGenerator : MonoBehaviour
             treesList.Add(Instantiate<GameObject>(treeObject));
             treesArray = treesList.ToArray();
             treesArray[i].transform.position = new Vector3(Random.Range(-42, 42), 0, Random.Range(-42, 42));
-            treesArray[i].transform.parent = treesInWorldObject.transform;
+            //treesArray[i].transform.parent = treesInWorldObject.transform;
         }
     }
 }
