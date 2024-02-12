@@ -324,8 +324,67 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc89f84379f8c834091370feaab4f1ad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 171087992}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dc89f84379f8c834091370feaab4f1ad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 171087993}
   m_SourcePrefab: {fileID: 100100000, guid: dc89f84379f8c834091370feaab4f1ad, type: 3}
+--- !u!1 &171087991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dc89f84379f8c834091370feaab4f1ad, type: 3}
+  m_PrefabInstance: {fileID: 171087990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &171087992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171087991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2d71ad37d127341868b40456c98430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openInterface:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1556540407}
+        m_TargetAssemblyTypeName: CraftFonction, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &171087993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171087991}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.102654, y: 6.242341, z: 11.030171}
+  m_Center: {x: -3.5513272, y: 3.1298852, z: -5.0150857}
 --- !u!1 &186578719
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +718,7 @@ GameObject:
   - component: {fileID: 481836496}
   - component: {fileID: 481836495}
   - component: {fileID: 481836494}
+  - component: {fileID: 481836497}
   m_Layer: 5
   m_Name: CraftButton
   m_TagString: Untagged
@@ -768,6 +828,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481836492}
   m_CullTransparentMesh: 1
+--- !u!114 &481836497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481836492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ae3699e84a9684ca5d2750ae8a682e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpaners:
+  - quantity: 1
+    prefab: {fileID: 2080650730838919797, guid: f4f939c0dc7f24b48bb6836a0c6d7e9c, type: 3}
 --- !u!1 &636308627 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -1212,14 +1287,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1556540406}
   - component: {fileID: 1556540407}
-  - component: {fileID: 1556540408}
   m_Layer: 0
   m_Name: Craft Interface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1556540406
 Transform:
   m_ObjectHideFlags: 0
@@ -1248,26 +1322,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c7b16158f602941a4ce6dd52a71eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodIndex: 0
-  rockIndex: 1
-  woodCount: 1
-  brickCount: 3
-  positionSpawn: {x: -3.89, y: 3.74, z: -8.663}
-  craftButton: {fileID: 481836494}
---- !u!114 &1556540408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556540405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ae3699e84a9684ca5d2750ae8a682e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quantity: 1
-  prefab: {fileID: 2080650730838919797, guid: f4f939c0dc7f24b48bb6836a0c6d7e9c, type: 3}
+  itemCraft:
+  - woodIndex: 0
+    rockIndex: 1
+    woodCount: 1
+    brickCount: 3
+    positionSpawn: {x: -3.238293, y: 3.625529, z: -8.745536}
+    craftButton: {fileID: 481836494}
 --- !u!1 &1647623231
 GameObject:
   m_ObjectHideFlags: 0

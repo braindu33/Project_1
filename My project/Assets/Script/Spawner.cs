@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private int quantity = 3;
-    [SerializeField] private GameObject prefab;
+    [SerializeField] public List<ItemSpaner> itemSpaners = new();
+    private int quantity = 3;
+    private GameObject prefab;
 
     //[SerializeField] private float bonusPercentage = 10.0f;
     //[SerializeField] private int bonusQuantity = 2;

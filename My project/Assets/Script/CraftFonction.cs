@@ -1,20 +1,18 @@
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Sirenix.OdinInspector;
 
 public class CraftFonction : MonoBehaviour
 {
-    //public List<CraftFonction> ItemCraft = new ();
-    [SerializeField] private int woodIndex, rockIndex;
-    [SerializeField] private int woodCount = 1;
-    [SerializeField] private int brickCount = 3;
+    public List<ItemCraft> itemCraft = new ();
+    
+    private int woodIndex, rockIndex;
+    private int woodCount = 1;
+    private int brickCount = 3;
 
-    //[SerializeField] private TextMeshProUGUI textWood, textRock;
+    private Vector3 positionSpawn;
 
-    [SerializeField] private Vector3 positionSpawn;
-
-    [SerializeField] private Button craftButton;
+    private Button craftButton;
     
     private Spawner _spawner;
 
@@ -26,16 +24,14 @@ public class CraftFonction : MonoBehaviour
 
     private void Start()
     {
-        //Cursor.visible = true;
-        //Cursor.lockState = CursorLockMode.None;
+        gameObject.SetActive(false);
     }
 
-    public void Update()
+    public void Open()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            gameObject.SetActive(true);
-        }
+        gameObject.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     #region Input
@@ -52,6 +48,8 @@ public class CraftFonction : MonoBehaviour
     private void Close()
     {
         gameObject.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     #endregion
