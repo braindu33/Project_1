@@ -12,10 +12,16 @@ public class Inventory : MonoBehaviour
     [SerializeField] private int emptyHandAttackForce = 1;
     [SerializeField] private int emptyHandHarvestLevel= 1;
     
+    [SerializeField] private int size = 4;
+    private int _currentSlot = 0;
+    private GameObject[] _slots;
+    
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
+
+        _slots = new GameObject[size];
     }
     
     public int GetPlayerAttackForce()
@@ -50,5 +56,28 @@ public class Inventory : MonoBehaviour
     public bool RemoveResource(int index, int resourceToRemove)
     {
         return resources[index].RemoveResource(resourceToRemove);
+    }
+
+    public bool TrySetItemInEmptySlot(GameObject item)
+    {
+        if (_slots[_currentSlot])
+            return false;
+
+        _slots[_currentSlot] = item;
+        return true;
+    }
+    
+    public GameObject GetCurrentItem()
+    {
+        return _slots[_currentSlot];
+    }
+    
+    public void RemoveCurrentSlot()
+    {
+        if (!_slots[_currentSlot])
+            return;
+
+        GameObject item = _slots[_currentSlot];
+        _slots[_currentSlot] = null;
     }
 }

@@ -153,8 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ae3699e84a9684ca5d2750ae8a682e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quantity: 1
-  prefab: {fileID: 8034547903740508183, guid: e285d93253ca5e44fbb2dedb3bb75d31, type: 3}
+  itemSpaners: []
 --- !u!114 &8844817757231826246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,11 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4367944140369c4d92f186eecc54181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PriceAndIndex:
-  - index: 0
-    maxValue: 0
-    value: 0
-    count: 0
   itemPrice: 1
   itemIndex: 0
   textComponent: {fileID: 5549767942912858094}

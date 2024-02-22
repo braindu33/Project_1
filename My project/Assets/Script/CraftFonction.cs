@@ -6,15 +6,18 @@ public class CraftFonction : MonoBehaviour
 {
     public List<ItemCraft> itemCraft = new ();
     
+    public static CraftFonction Instance { get; private set;}
+    
     private int woodIndex, rockIndex;
     private int woodCount = 1;
     private int brickCount = 3;
 
     private Vector3 positionSpawn;
-
     private Button craftButton;
-    
     private Spawner _spawner;
+
+    private int _currentObjectCraft;
+    private GameObject[] objectCraft;
 
     private void Awake()
     {
@@ -22,16 +25,21 @@ public class CraftFonction : MonoBehaviour
         craftButton.onClick.AddListener(Craft);
     }
 
-    private void Start()
+    /*private void Start()
     {
         gameObject.SetActive(false);
-    }
+    }*/
 
     public void Open()
     {
         gameObject.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public GameObject GetItemCraft()
+    {
+        return objectCraft[_currentObjectCraft];
     }
 
     #region Input
@@ -49,7 +57,6 @@ public class CraftFonction : MonoBehaviour
     {
         gameObject.SetActive(false);
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.None;
     }
 
     #endregion

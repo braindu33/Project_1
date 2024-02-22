@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class GetResourceFunction : MonoBehaviour
 {
+    public static GetResourceFunction Instance { get; private set;}
     [SerializeField] private int value;
     [SerializeField] private int index;
 
+    private Actionable _objectTaked;
 
-    public void Update()
+
+    /*public void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -27,5 +30,15 @@ public class GetResourceFunction : MonoBehaviour
                 }
             }
         }
+    }*/
+    
+    [ContextMenu("Prednre")]
+    public void GetResource()
+    {
+        _objectTaked.TakeAction();
+        Inventory.Instance.GetResource(index).AddResource(value);
+        Destroy(gameObject);
+        
+        Debug.Log("La ressource est collectée");
     }
 }

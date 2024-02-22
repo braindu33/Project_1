@@ -11,6 +11,7 @@ public class PickableFonction : MonoBehaviour
     [SerializeField] private UnityEvent onPickUp;
     [SerializeField] private UnityEvent onDrop;
 
+    private Inventory _inventory;
     private Rigidbody _rigidbody;
 
     private Animator _handAnimator;
@@ -28,12 +29,13 @@ public class PickableFonction : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _inventory = Inventory.Instance;
     }
 
     [ContextMenu("Rammasser")]
     public void Pickup()
     {
-        if (Input.GetMouseButtonDown(1))
+        /*if (Input.GetMouseButtonDown(1))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -48,11 +50,16 @@ public class PickableFonction : MonoBehaviour
                     onPickUp.Invoke();
                 }
             }
-        }
+        }*/
 
+        if (!_inventory.TrySetItemInEmptySlot(gameObject)) return;
+            onPickUp.Invoke();
+
+        _handAnimator = _inventory.GetComponentInParent<Animator>();
         _animParameterPickup = Animator.StringToHash("Pickup");
         _handAnimator.SetTrigger(_animParameterPickup);
 
+        transform.parent = _inventory.GetComponent<Transform>();
         transform.localPosition = pickupPosition;
         transform.localRotation = pickupRotation;
         transform.localScale = Vector3.one;
@@ -62,11 +69,15 @@ public class PickableFonction : MonoBehaviour
 
         foreach (var col in GetComponents<Collider>())
             col.enabled = false;
+        
+        Debug.Log("Item Picked");
     }
 
     [ContextMenu("Déposer")]
     public void Drop()
     {
+        _inventory.RemoveCurrentSlot();
+        
         onDrop.Invoke();
 
         _rigidbody.useGravity = true;
@@ -74,5 +85,8 @@ public class PickableFonction : MonoBehaviour
 
         foreach (var col in GetComponents<Collider>())
             col.enabled = true;
+
+        transform.parent = null;
+        
     }
 }

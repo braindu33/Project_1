@@ -43,7 +43,7 @@ Animator:
   m_GameObject: {fileID: 1275582162907435519}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9fba79a1aa1fdf448add7af05c671f3e, type: 2}
+  m_Controller: {fileID: 9100000, guid: ac9899e408e2d174b8fdbe83f9fc497f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -162,6 +162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 3
+  layers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4359213262409435737
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +508,58 @@ MonoBehaviour:
     sendAxisValue:
       m_PersistentCalls:
         m_Calls: []
+  - axis: ClicDroit
+    isButton: 1
+    buttonDown:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1431324869825338216}
+          m_TargetAssemblyTypeName: DetectActionate, Assembly-CSharp
+          m_MethodName: ActionateObjectSecondAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    buttonUp:
+      m_PersistentCalls:
+        m_Calls: []
+    button:
+      m_PersistentCalls:
+        m_Calls: []
+    sendAxisValue:
+      m_PersistentCalls:
+        m_Calls: []
+  - axis: Prendre/Atrapper
+    isButton: 1
+    buttonDown:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1431324869825338216}
+          m_TargetAssemblyTypeName: DetectActionate, Assembly-CSharp
+          m_MethodName: ActionateObjectTake
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    buttonUp:
+      m_PersistentCalls:
+        m_Calls: []
+    button:
+      m_PersistentCalls:
+        m_Calls: []
+    sendAxisValue:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!54 &-7652933407919208637
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -656,6 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4758720089382958992}
+  - component: {fileID: 1590800611660053162}
   m_Layer: 0
   m_Name: ObjectHolder
   m_TagString: Untagged
@@ -678,3 +734,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9113448528280943066}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590800611660053162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024239805904521791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae0d00367310454fb8157abeaa0349f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources:
+  - index: 0
+    maxValue: 50
+    value: 5
+    count: 0
+  - index: 1
+    maxValue: 50
+    value: 0
+    count: 10
+  emptyHandAttackForce: 1
+  emptyHandHarvestLevel: 0
+  size: 4
