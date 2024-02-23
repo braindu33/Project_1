@@ -6,6 +6,9 @@ using UnityEngine;
 public class GetResourceFunction : MonoBehaviour
 {
     public static GetResourceFunction Instance { get; private set;}
+    
+    public List<IndexRepository> indexRepositories = new();
+    
     [SerializeField] private int value;
     [SerializeField] private int index;
 
@@ -32,10 +35,9 @@ public class GetResourceFunction : MonoBehaviour
         }
     }*/
     
-    [ContextMenu("Prednre")]
+    //[ContextMenu("Prendre")]
     public void GetResource()
     {
-        _objectTaked.TakeAction();
         Inventory.Instance.GetResource(index).AddResource(value);
         Destroy(gameObject);
         

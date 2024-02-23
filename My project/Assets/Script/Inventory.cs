@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<Resource> resources = new();
-    
     public static Inventory Instance { get; private set;}
+    
+    public List<Resource> resources = new();
+    public List<IndexRepository> indexRepositories= new();
 
     [SerializeField] private int emptyHandAttackForce = 1;
     [SerializeField] private int emptyHandHarvestLevel= 1;
@@ -15,7 +16,6 @@ public class Inventory : MonoBehaviour
     [SerializeField] private int size = 4;
     private int _currentSlot = 0;
     private GameObject[] _slots;
-    
     private void Awake()
     {
         if (Instance == null)
@@ -71,7 +71,7 @@ public class Inventory : MonoBehaviour
     {
         return _slots[_currentSlot];
     }
-    
+
     public void RemoveCurrentSlot()
     {
         if (!_slots[_currentSlot])
@@ -79,5 +79,10 @@ public class Inventory : MonoBehaviour
 
         GameObject item = _slots[_currentSlot];
         _slots[_currentSlot] = null;
+    }
+
+    public IndexRepository GetIndex(int index)
+    {
+        return indexRepositories[index];
     }
 }

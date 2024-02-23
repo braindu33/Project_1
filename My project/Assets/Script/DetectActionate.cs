@@ -9,13 +9,16 @@ public class DetectActionate : MonoBehaviour
     [SerializeField] private float distance = 3;
     [SerializeField] private LayerMask layers;
     
-    private RaycastHit _hit;
-    private Actionable _objectLooked;
-    private Actionable _actionable;
-    private Actionable _actionableInHand;
-    private Actionable _takeObject;
+    private RaycastHit hit;
+    private Actionable objectLooked;
+    private Actionable actionable;
+    private Actionable actionableInHand;
+    //private GetResourceFunction take;
+
+    private int index;
     
-    private GetResourceFunction resource;
+    //private GetResourceFunction resource;
+    //[SerializeField] private int _currentResourceIndex = 0;
     
     private float _waitingTimeBetweenActions = 0.7f;
     
@@ -35,23 +38,23 @@ public class DetectActionate : MonoBehaviour
 
     private void DetectActionable()
     {
-        _objectLooked = null;
-        if(Physics.Raycast(transform.position, transform.forward, out _hit, distance, layers))
+        objectLooked = null;
+        if(Physics.Raycast(transform.position, transform.forward, out hit, distance, layers))
         {
-            _objectLooked = _hit.transform.GetComponent<Actionable>();
+            objectLooked = hit.transform.GetComponent<Actionable>();
         }
         
-        if(_objectLooked == _actionable) return;
+        if(objectLooked == actionable) return;
 
-        if (_actionable)
+        if (actionable)
         {
-            _actionable.StopLooking();
+            actionable.StopLooking();
         }
-        _actionable = _objectLooked;
+        actionable = objectLooked;
 
-        if(_actionable)
+        if(actionable)
         {
-            _actionable.StartLooking();
+            actionable.StartLooking();
         }
     }
     public void ActionateObjectFirstAction()
@@ -59,14 +62,14 @@ public class DetectActionate : MonoBehaviour
         GameObject item = Inventory.Instance.GetCurrentItem();
         if (item)
         {
-            _actionableInHand = item.GetComponent<Actionable>();
-            if (_actionableInHand)
+            actionableInHand = item.GetComponent<Actionable>();
+            if (actionableInHand)
                 _handAnimator.SetTrigger(_animParameterHit);
         }
         
-        if(!_actionable) return;
+        if(!actionable) return;
         
-        _actionable.FirstAction();
+        actionable.FirstAction();
     }
 
     public void ActionateObjectSecondAction()
@@ -74,28 +77,28 @@ public class DetectActionate : MonoBehaviour
         GameObject item = Inventory.Instance.GetCurrentItem();
         if (item)
         {
-            _actionableInHand = item.GetComponent<Actionable>();
-            if (_actionableInHand)
+            actionableInHand = item.GetComponent<Actionable>();
+            if (actionableInHand)
             {
-                _actionableInHand.SecondAction();
+                actionableInHand.SecondAction();
                 return;
             }
         }
         
-        _actionableInHand = Inventory.Instance.GetComponentInChildren<Actionable>();
-        if(_actionableInHand)
+        actionableInHand = Inventory.Instance.GetComponentInChildren<Actionable>();
+        if(actionableInHand)
         {
-            _actionableInHand.SecondAction();
+            actionableInHand.SecondAction();
         }
 
-        if(_actionable) 
+        if(actionable) 
         {
-            _actionable.SecondAction();
+            actionable.SecondAction();
         }
     }
 
-    /*public void ActionateObjectTake()
+    public void ActionateObjectTake()
     {
         
-    }*/
+    }
 }
