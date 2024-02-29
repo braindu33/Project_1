@@ -165,6 +165,7 @@ MonoBehaviour:
   layers:
     serializedVersion: 2
     m_Bits: 0
+  itemIndex: 0
 --- !u!1 &4359213262409435737
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,8 +338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 4989688870992082514}
-  minSpeed: 4
-  maxSpeed: 6
+  minSpeed: 5
+  maxSpeed: 15
   minRotation: -90
   maxRotation: 90
 --- !u!114 &5577809105408185248
@@ -534,7 +535,7 @@ MonoBehaviour:
     sendAxisValue:
       m_PersistentCalls:
         m_Calls: []
-  - axis: Prendre/Atrapper
+  - axis: Prendre/Attraper
     isButton: 1
     buttonDown:
       m_PersistentCalls:
@@ -554,6 +555,44 @@ MonoBehaviour:
     buttonUp:
       m_PersistentCalls:
         m_Calls: []
+    button:
+      m_PersistentCalls:
+        m_Calls: []
+    sendAxisValue:
+      m_PersistentCalls:
+        m_Calls: []
+  - axis: "Acc\xE9l\xE9rer"
+    isButton: 1
+    buttonDown:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8165195536594193996}
+          m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+          m_MethodName: ApplyMaxSpeed
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    buttonUp:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8165195536594193996}
+          m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+          m_MethodName: ApplyMinSpeed
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     button:
       m_PersistentCalls:
         m_Calls: []

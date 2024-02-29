@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[System.Serializable]
+[Serializable]
 public class Resource
 {
     public static Resource Instance { get; private set;}

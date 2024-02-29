@@ -7,12 +7,8 @@ public class GetResourceFunction : MonoBehaviour
 {
     public static GetResourceFunction Instance { get; private set;}
     
-    public List<IndexRepository> indexRepositories = new();
-    
     [SerializeField] private int value;
     [SerializeField] private int index;
-
-    private Actionable _objectTaked;
 
 
     /*public void Update()
@@ -34,13 +30,16 @@ public class GetResourceFunction : MonoBehaviour
             }
         }
     }*/
-    
-    //[ContextMenu("Prendre")]
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
     public void GetResource()
     {
         Inventory.Instance.GetResource(index).AddResource(value);
         Destroy(gameObject);
-        
-        Debug.Log("La ressource est collectée");
     }
 }

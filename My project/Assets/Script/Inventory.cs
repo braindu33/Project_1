@@ -8,8 +8,7 @@ public class Inventory : MonoBehaviour
     public static Inventory Instance { get; private set;}
     
     public List<Resource> resources = new();
-    public List<IndexRepository> indexRepositories= new();
-
+    
     [SerializeField] private int emptyHandAttackForce = 1;
     [SerializeField] private int emptyHandHarvestLevel= 1;
     
@@ -79,10 +78,5 @@ public class Inventory : MonoBehaviour
 
         GameObject item = _slots[_currentSlot];
         _slots[_currentSlot] = null;
-    }
-
-    public IndexRepository GetIndex(int index)
-    {
-        return indexRepositories[index];
     }
 }

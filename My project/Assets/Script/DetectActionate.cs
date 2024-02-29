@@ -8,18 +8,14 @@ public class DetectActionate : MonoBehaviour
 {
     [SerializeField] private float distance = 3;
     [SerializeField] private LayerMask layers;
+    [SerializeField] private int itemIndex;
     
     private RaycastHit hit;
     private Actionable objectLooked;
     private Actionable actionable;
     private Actionable actionableInHand;
-    //private GetResourceFunction take;
 
-    private int index;
-    
-    //private GetResourceFunction resource;
-    //[SerializeField] private int _currentResourceIndex = 0;
-    
+    private GetResourceFunction getResource;
     private float _waitingTimeBetweenActions = 0.7f;
     
     private Animator _handAnimator;
@@ -99,6 +95,11 @@ public class DetectActionate : MonoBehaviour
 
     public void ActionateObjectTake()
     {
-        
+        /*GetResourceFunction get = GetComponent<GetResourceFunction>();
+        if (get)
+        {
+            GetResourceFunction.Instance.GetResource();
+            actionable.TakeAction();   
+        }*/
     }
 }
