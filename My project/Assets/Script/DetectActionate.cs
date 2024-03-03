@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,18 +9,25 @@ public class DetectActionate : MonoBehaviour
 {
     [SerializeField] private float distance = 3;
     [SerializeField] private LayerMask layers;
-    [SerializeField] private int itemIndex;
+    //[SerializeField] private string typeTag;
     
     private RaycastHit hit;
-    private Actionable objectLooked;
+    private Actionable objectLooked; 
     private Actionable actionable;
     private Actionable actionableInHand;
 
-    private GetResourceFunction getResource;
+    private GetResourceFunction get;
+    private PickableFonction pick;
+
     private float _waitingTimeBetweenActions = 0.7f;
     
     private Animator _handAnimator;
     private int _animParameterHit;
+
+    private void Awake()
+    {
+        
+    }
 
     private void Start()
     {
@@ -95,11 +103,24 @@ public class DetectActionate : MonoBehaviour
 
     public void ActionateObjectTake()
     {
-        /*GetResourceFunction get = GetComponent<GetResourceFunction>();
-        if (get)
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 3))
+        { 
+            get = hit.collider.GetComponent<GetResourceFunction>();
+
+            if (get)
+            {
+                get.GetResource();
+            }
+        }
+
+        if (Physics.Raycast(ray, out hit, 5))
         {
-            GetResourceFunction.Instance.GetResource();
-            actionable.TakeAction();   
-        }*/
+            pick = hit.collider.GetComponent<PickableFonction>();
+            if(pick)
+                pick.Pickup();
+        }
     }
 }

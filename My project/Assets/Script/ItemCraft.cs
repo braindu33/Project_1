@@ -15,4 +15,17 @@ public class ItemCraft
     [SerializeField] public Vector3 positionSpawn;
 
     [SerializeField] public Button craftButton;
+    
+    public Spawner spawner;
+    public Action close;
+    
+    public void Craft()
+    {
+        if (Inventory.Instance.RemoveResource(woodIndex & rockIndex, woodCount & brickCount))
+        {
+            spawner.Spawn(positionSpawn);
+        }
+        close.Invoke();
+    }
+
 }

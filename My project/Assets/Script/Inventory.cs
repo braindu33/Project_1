@@ -79,4 +79,12 @@ public class Inventory : MonoBehaviour
         GameObject item = _slots[_currentSlot];
         _slots[_currentSlot] = null;
     }
+    
+    public string[] GetObjectTag()
+    {
+        var getResource = GetComponent<GetResourceFunction>();
+
+        if (!getResource) return null;
+        return getResource.GetCategory;
+    }
 }

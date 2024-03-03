@@ -17,6 +17,7 @@ public class PickableFonction : MonoBehaviour
     private Animator _handAnimator;
     private int _animParameterPickup;
 
+    private string test;
     [SerializeField] private int attackForce = 3;
     public int AttackForce => attackForce;
 

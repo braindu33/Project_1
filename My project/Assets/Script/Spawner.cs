@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
-{
-    [SerializeField] public List<ItemSpaner> itemSpaners = new();
-    private int quantity = 3;
-    private GameObject prefab;
+{ 
+    public int quantity = 3;
+    public GameObject prefab;
 
     //[SerializeField] private float bonusPercentage = 10.0f;
     //[SerializeField] private int bonusQuantity = 2;

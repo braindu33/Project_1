@@ -1,34 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class CraftFonction : MonoBehaviour
 {
-    public List<ItemCraft> itemCraft = new ();
-    
-    public static CraftFonction Instance { get; private set;}
-    
-    private int woodIndex, rockIndex;
-    private int woodCount = 1;
-    private int brickCount = 3;
+    [FormerlySerializedAs("itemCraft")] public List<ItemCraft> itemCrafts = new ();
 
     private Vector3 positionSpawn;
-    private Button craftButton;
-    private Spawner _spawner;
-
-    private int _currentObjectCraft;
-    private GameObject[] objectCraft;
 
     private void Awake()
     {
-        _spawner = GetComponent<Spawner>();
-        craftButton.onClick.AddListener(Craft);
+        foreach (var itemCraft in itemCrafts)
+        { 
+            itemCraft.close = Close;
+            itemCraft.craftButton.onClick.AddListener(itemCraft.Craft);
+        }
     }
-
-    /*private void Start()
-    {
-        gameObject.SetActive(false);
-    }*/
 
     public void Open()
     {
@@ -36,28 +24,11 @@ public class CraftFonction : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
-
-    public GameObject GetItemCraft()
-    {
-        return objectCraft[_currentObjectCraft];
-    }
-
-    #region Input
-
-    private void Craft()
-    {
-        if (Inventory.Instance.RemoveResource(woodIndex & rockIndex, woodCount & brickCount))
-        {
-            _spawner.Spawn(positionSpawn);
-        }
-        Close();
-    }
-
+    
     private void Close()
     {
         gameObject.SetActive(false);
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
-
-    #endregion
 }

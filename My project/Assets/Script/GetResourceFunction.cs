@@ -10,7 +10,8 @@ public class GetResourceFunction : MonoBehaviour
     [SerializeField] private int value;
     [SerializeField] private int index;
 
-
+    [SerializeField] private string[] getTagCategory; 
+    public string[] GetCategory => getTagCategory;
     /*public void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

@@ -70,9 +70,6 @@ PrefabInstance:
       addedObject: {fileID: -6490533413534376300}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: effa75e73ee35cf49af159b19160cf5d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -6403623049201424111}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: effa75e73ee35cf49af159b19160cf5d, type: 3}
-      insertIndex: -1
       addedObject: {fileID: -8335408517311228540}
     - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: effa75e73ee35cf49af159b19160cf5d, type: 3}
       insertIndex: -1
@@ -190,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d21118b0e5c4fe498c82443941398fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupPosition: {x: -4.59, y: 3, z: 2.62}
+  pickupPosition: {x: 1.01, y: -1.25, z: 0.62}
   pickupRotation: {x: 0.061628427, y: -0.70441604, z: -0.1830127, w: 0.6830127}
   onPickUp:
     m_PersistentCalls:
@@ -228,48 +225,6 @@ MonoBehaviour:
   harvestCategories:
   - wood
   harvestLevel: 10
---- !u!114 &-6403623049201424111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080650730838919797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b901770a2840330478edcd76ba6bcbe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -6490533413534376300}
-        m_TargetAssemblyTypeName: PickableFonction, Assembly-CSharp
-        m_MethodName: Pickup
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  secondaryAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -6490533413534376300}
-        m_TargetAssemblyTypeName: PickableFonction, Assembly-CSharp
-        m_MethodName: Drop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &-8335408517311228540
 MonoBehaviour:
   m_ObjectHideFlags: 0
