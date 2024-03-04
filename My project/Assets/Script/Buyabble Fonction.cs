@@ -25,7 +25,7 @@ public class BuyabbleFonction : MonoBehaviour
         textComponent.text = itemPrice + "wood";
     }
 
-    public void Update()
+    public void Buy()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
