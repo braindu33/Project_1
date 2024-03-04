@@ -7,7 +7,7 @@ public class CraftFonction : MonoBehaviour
 {
     [FormerlySerializedAs("itemCraft")] public List<ItemCraft> itemCrafts = new ();
 
-    private Vector3 positionSpawn;
+    //private Vector3 positionSpawn;
 
     private void Awake()
     {
