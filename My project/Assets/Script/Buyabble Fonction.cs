@@ -32,26 +32,6 @@ public class BuyabbleFonction : MonoBehaviour
         textComponent.text = itemPrice + "wood";
     }
 
-    public void Buy()
-    {
-        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 3))
-        {
-            BuyabbleFonction buy = hit.collider.GetComponent<BuyabbleFonction>();
-            if (buy && Inventory.Instance.RemoveResource(itemIndex, itemPrice))
-            {
-                _spawner.Spawn(positionSpawn);
-            }
-        }*/
-
-        if (Inventory.Instance.RemoveResource(itemIndex, itemPrice))
-        {
-            _spawner.Spawn(positionSpawn);
-        }
-    }
-
     public void Open()
     {
         gameObject.SetActive(true);
@@ -59,7 +39,7 @@ public class BuyabbleFonction : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
     
-    private void Close()
+    public void Close()
     {
         gameObject.SetActive(false);
         Cursor.visible = false;
