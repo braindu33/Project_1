@@ -22,22 +22,15 @@ public class BuyabbleFonction : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 3))
         {
-            // Cast a ray from the camera to the mouse position
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 3))
+            BuyabbleFonction buy = hit.collider.GetComponent<BuyabbleFonction>();
+            if (buy && Inventory.Instance.RemoveResource(itemIndex, itemPrice))
             {
-                // Check if the object hit has a "LifeSystem" component
-                BuyabbleFonction buy = hit.collider.GetComponent<BuyabbleFonction>();
-
-                Debug.Log(hit.collider.gameObject.name);
-                if (buy && Inventory.Instance.RemoveResource(itemIndex, itemPrice))
-                {
-                    _spawner.Spawn(positionSpawn);
-                }
+                _spawner.Spawn(positionSpawn);
             }
         }
     }
