@@ -20,6 +20,11 @@ public class BuyabbleFonction : MonoBehaviour
         _spawner = GetComponent<Spawner>();
     }
 
+    private void Start()
+    {
+        textComponent.text = itemPrice + "wood";
+    }
+
     public void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -33,11 +38,6 @@ public class BuyabbleFonction : MonoBehaviour
                 _spawner.Spawn(positionSpawn);
             }
         }
-    }
-
-    private void Start()
-    {
-        textComponent.text = itemPrice + "wood";
     }
     
 }
