@@ -22,6 +22,7 @@ public class BuyabbleFonction : MonoBehaviour
         foreach(var itemBuy in itemBuys)
         {
             itemBuy.buyButton.onClick.AddListener(itemBuy.Buy)
+itembuy.close = Close;
         }
         
         _spawner = GetComponent<Spawner>();
