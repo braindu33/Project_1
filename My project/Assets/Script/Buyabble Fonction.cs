@@ -66,3 +66,4 @@ public class ItemBuy
         }
     close.Invoke();
     }
+}
