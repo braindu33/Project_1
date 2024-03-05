@@ -6,8 +6,10 @@ public class OpenInterface : MonoBehaviour
 {
     [SerializeField] private int maxDistance;
     
-    [SerializeField] private OpenInterface open;
+    [SerializeField] private OpenInterface openCraftInterface, openBuyInterface;
     [SerializeField] private CraftFonction craft;
+    [SerializeField] private BuyabbleFunction buy;
+
     private RaycastHit hit;
 
     public void OnTriggerEnter(Collider other)
@@ -18,12 +20,18 @@ public class OpenInterface : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, maxDistance))
             {
-                open = hit.collider.GetComponent<OpenInterface>();
+                openCraftInterface = hit.collider.GetComponent<OpenInterface>();
 
-                if (open)
+                if (openCraftInterface)
                 {
-                    Debug.Log("Third");
                     craft.Open();
+                }
+
+                openBuyInterface = hit.collider.GetComponent<OpenInterface>();
+
+                if (openBuyInterface)
+                {
+                    buy.Open();
                 }
             }
         }
