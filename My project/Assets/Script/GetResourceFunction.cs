@@ -12,26 +12,7 @@ public class GetResourceFunction : MonoBehaviour
 
     [SerializeField] private string[] getTagCategory; 
     public string[] GetCategory => getTagCategory;
-    /*public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 3))
-            {
-                GetResourceFunction getResourceFunction = hit.collider.GetComponent<GetResourceFunction>();
-
-                if (getResourceFunction == this)
-                {
-                    Inventory.Instance.GetResource(index).AddResource(value);
-                    Destroy(gameObject);
-                }
-            }
-        }
-    }*/
-
+    
     private void Awake()
     {
         if (Instance == null)
