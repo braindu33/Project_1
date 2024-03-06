@@ -36,22 +36,6 @@ public class PickableFonction : MonoBehaviour
     [ContextMenu("Rammasser")]
     public void Pickup()
     {
-        /*if (Input.GetMouseButtonDown(1))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 3))
-            {
-                PickableFonction pick = hit.collider.GetComponent<PickableFonction>();
-
-                if (pick)
-                {
-                    Debug.Log("Item picked");
-                    onPickUp.Invoke();
-                }
-            }
-        }*/
 
         if (!_inventory.TrySetItemInEmptySlot(gameObject)) return;
             onPickUp.Invoke();
@@ -70,8 +54,6 @@ public class PickableFonction : MonoBehaviour
 
         foreach (var col in GetComponents<Collider>())
             col.enabled = false;
-        
-        Debug.Log("Item Picked");
     }
 
     [ContextMenu("Déposer")]

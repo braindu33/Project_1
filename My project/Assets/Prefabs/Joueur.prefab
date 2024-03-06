@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 1431324869825338216}
   m_Layer: 0
   m_Name: MainCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,8 +164,7 @@ MonoBehaviour:
   distance: 3
   layers:
     serializedVersion: 2
-    m_Bits: 0
-  itemIndex: 0
+    m_Bits: 8
 --- !u!1 &4359213262409435737
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +598,32 @@ MonoBehaviour:
     sendAxisValue:
       m_PersistentCalls:
         m_Calls: []
+  - axis: Interragir
+    isButton: 1
+    buttonDown:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: OpenInterface, Assembly-CSharp
+          m_MethodName: OnTriggerEnter
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1082703906926239244}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    buttonUp:
+      m_PersistentCalls:
+        m_Calls: []
+    button:
+      m_PersistentCalls:
+        m_Calls: []
+    sendAxisValue:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!54 &-7652933407919208637
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -787,13 +812,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resources:
   - index: 0
-    maxValue: 50
+    maxValue: 100
     value: 5
     count: 0
   - index: 1
-    maxValue: 50
+    maxValue: 100
     value: 0
-    count: 10
+    count: 0
   emptyHandAttackForce: 1
   emptyHandHarvestLevel: 0
   size: 4

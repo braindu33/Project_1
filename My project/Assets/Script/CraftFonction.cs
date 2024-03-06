@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -6,9 +7,7 @@ using UnityEngine.UI;
 public class CraftFonction : MonoBehaviour
 {
     [FormerlySerializedAs("itemCraft")] public List<ItemCraft> itemCrafts = new ();
-
-    //private Vector3 positionSpawn;
-
+    
     private void Awake()
     {
         foreach (var itemCraft in itemCrafts)
@@ -16,6 +15,11 @@ public class CraftFonction : MonoBehaviour
             itemCraft.close = Close;
             itemCraft.craftButton.onClick.AddListener(itemCraft.Craft);
         }
+    }
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
     }
 
     public void Open()

@@ -15,6 +15,9 @@ public class Inventory : MonoBehaviour
     [SerializeField] private int size = 4;
     private int _currentSlot = 0;
     private GameObject[] _slots;
+
+    private int interfaceToOpen;
+    private GameObject[] @interface;
     private void Awake()
     {
         if (Instance == null)
@@ -78,13 +81,5 @@ public class Inventory : MonoBehaviour
 
         GameObject item = _slots[_currentSlot];
         _slots[_currentSlot] = null;
-    }
-    
-    public string[] GetObjectTag()
-    {
-        var getResource = GetComponent<GetResourceFunction>();
-
-        if (!getResource) return null;
-        return getResource.GetCategory;
     }
 }

@@ -4,36 +4,51 @@ using UnityEngine.Events;
 
 public class OpenInterface : MonoBehaviour
 {
-    [SerializeField] private int maxDistance;
+    //[SerializeField] private int maxDistance;
     
     [SerializeField] private OpenInterface openCraftInterface, openBuyInterface;
     [SerializeField] private CraftFonction craft;
-    [SerializeField] private BuyabbleFunction buy;
+    [SerializeField] private BuyabbleFonction buy;
 
     private RaycastHit hit;
 
-    public void OnTriggerEnter(Collider other)
+    public void OpenCraftInterface()
     {        
-        if (other.CompareTag("Player"))
+        if (openCraftInterface)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit, maxDistance))
-            {
-                openCraftInterface = hit.collider.GetComponent<OpenInterface>();
-
-                if (openCraftInterface)
-                {
-                    craft.Open();
-                }
-
-                openBuyInterface = hit.collider.GetComponent<OpenInterface>();
-
-                if (openBuyInterface)
-                {
-                    buy.Open();
-                }
-            }
+            craft.Open();
         }
+        
+        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, maxDistance))
+        {
+            openCraftInterface = hit.collider.GetComponent<OpenInterface>();
+
+            if (openCraftInterface)
+            {
+                craft.Open();
+            }
+        }*/
+    }
+    
+    public void OpenBuyInterface()
+    {     
+        if (openBuyInterface)
+        {
+            buy.Open();
+        }
+        
+        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, maxDistance))
+        {
+            openBuyInterface = hit.collider.GetComponent<OpenInterface>();
+
+            if (openBuyInterface)
+            {
+                buy.Open();
+            }
+        }*/
     }
 }

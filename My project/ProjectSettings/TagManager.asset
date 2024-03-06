@@ -7,6 +7,8 @@ TagManager:
   - Resource
   - rock
   - tree
+  - Shop
+  - Craft
   layers:
   - Default
   - TransparentFX
