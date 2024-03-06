@@ -23,7 +23,8 @@ public class DetectActionate : MonoBehaviour
     private GetResourceFunction get;
     private PickableFonction pick;
 
-    private OpenInterface openCraft, openBuy;
+    private OpenCraftInterface openCraft;
+    private OpenBuyInterface openBuy;
     private GameObject open1, open2;
 
     /*[SerializeField] private BuyabbleFonction buy;
