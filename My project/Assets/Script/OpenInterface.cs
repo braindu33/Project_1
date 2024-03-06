@@ -2,13 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class OpenInterface : MonoBehaviour
+public class OpenCraftInterface : MonoBehaviour
 {
-    //[SerializeField] private int maxDistance;
-    
-    [SerializeField] private OpenInterface openCraftInterface, openBuyInterface;
+    [SerializeField] private OpenCraftInterface openCraftInterface;
     [SerializeField] private CraftFonction craft;
-    [SerializeField] private BuyabbleFonction buy;
 
     private RaycastHit hit;
 
@@ -18,19 +15,15 @@ public class OpenInterface : MonoBehaviour
         {
             craft.Open();
         }
-        
-        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, maxDistance))
-        {
-            openCraftInterface = hit.collider.GetComponent<OpenInterface>();
-
-            if (openCraftInterface)
-            {
-                craft.Open();
-            }
-        }*/
     }
+}
+
+public class OpenBuyInterface : MonoBehaviour
+{
+    [SerializeField] private OpenInterface openBuyInterface;
+    [SerializeField] private BuyabbleFonction buy;
+
+    private RaycastHit hit;
     
     public void OpenBuyInterface()
     {     
@@ -38,17 +31,5 @@ public class OpenInterface : MonoBehaviour
         {
             buy.Open();
         }
-        
-        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, maxDistance))
-        {
-            openBuyInterface = hit.collider.GetComponent<OpenInterface>();
-
-            if (openBuyInterface)
-            {
-                buy.Open();
-            }
-        }*/
     }
 }
