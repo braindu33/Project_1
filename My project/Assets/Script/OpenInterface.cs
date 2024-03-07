@@ -9,7 +9,7 @@ public class OpenCraftInterface : MonoBehaviour
 
     private RaycastHit hit;
 
-    public void OpenCraftInterface()
+    public void OpenInterfaceCraft()
     {        
         if (openCraftInterface)
         {
@@ -20,12 +20,12 @@ public class OpenCraftInterface : MonoBehaviour
 
 public class OpenBuyInterface : MonoBehaviour
 {
-    [SerializeField] private OpenInterface openBuyInterface;
+    [SerializeField] private OpenBuyInterface openBuyInterface;
     [SerializeField] private BuyabbleFonction buy;
 
     private RaycastHit hit;
     
-    public void OpenBuyInterface()
+    public void OpenInterfaceBuy()
     {     
         if (openBuyInterface)
         {

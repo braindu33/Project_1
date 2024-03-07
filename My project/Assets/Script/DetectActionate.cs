@@ -45,10 +45,10 @@ public class DetectActionate : MonoBehaviour
     {
 
         open1 = GameObject.FindGameObjectWithTag("Craft");
-        openCraft = open1.GetComponent<OpenInterface>();
+        openCraft = open1.GetComponent<OpenCraftInterface>();
 
         open2 = GameObject.FindGameObjectWithTag("Shop");
-        openBuy = open2.GetComponent<OpenInterface>();
+        openBuy = open2.GetComponent<OpenBuyInterface>();
 
         /*foreach (var openInterface in openInterfaces)
         {
@@ -156,10 +156,10 @@ public class DetectActionate : MonoBehaviour
     public void ActionateInteractedObject()
     {
         if(openCraft)
-            openCraft.OpenCraftInterface();
+            openCraft.OpenInterfaceCraft();
 
         if (openBuy)
-            openBuy.OpenBuyInterface();
+            openBuy.OpenInterfaceBuy();
 
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         /*if (other.CompareTag("Player"))
