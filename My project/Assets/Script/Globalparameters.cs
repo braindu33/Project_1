@@ -9,5 +9,7 @@ public class Globalparameters : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        
+        
     }
 }

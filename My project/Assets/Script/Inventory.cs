@@ -60,6 +60,11 @@ public class Inventory : MonoBehaviour
         return resources[index].RemoveResource(resourceToRemove);
     }
 
+    public bool GetResourceToRemove(int index, int resource)
+    {
+        return resources[index].RemoveResource(resource);
+    }
+
     public bool TrySetItemInEmptySlot(GameObject item)
     {
         if (_slots[_currentSlot])

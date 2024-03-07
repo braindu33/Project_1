@@ -789,6 +789,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1590800611660053162, guid: 64419479df645e84fa4eab9de564dc01, type: 3}
+      propertyPath: resources.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590800611660053162, guid: 64419479df645e84fa4eab9de564dc01, type: 3}
       propertyPath: resources.Array.data[1].count
       value: 0
       objectReference: {fileID: 0}
@@ -2104,10 +2108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b9fccabef1bb948a45479ce893c06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxDistanceToOpen: 5
   openCraftInterface: {fileID: 1375936920}
-  openBuyInterface: {fileID: 1852593365}
   craft: {fileID: 1556540407}
-  buy: {fileID: 517362651}
 --- !u!1001 &1423462569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2682,12 +2685,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1852593361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b9fccabef1bb948a45479ce893c06d, type: 3}
+  m_Script: {fileID: 11500000, guid: d2ac99297ee04f70805f9af423bd564a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openCraftInterface: {fileID: 1375936920}
+  maxDistanceToOpen: 5
   openBuyInterface: {fileID: 1852593365}
-  craft: {fileID: 1556540407}
   buy: {fileID: 517362651}
 --- !u!1001 &1879430340
 PrefabInstance:
@@ -3680,8 +3682,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 5917269514476967907}
   - {fileID: 2024334247}
-  - {fileID: 737448423}
   - {fileID: 2638877406451318141}
+  - {fileID: 737448423}
   - {fileID: 1518726589058755076}
   - {fileID: 1279243573125259369}
   - {fileID: 1465870760}
