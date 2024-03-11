@@ -12,7 +12,7 @@ public class CraftFonction : MonoBehaviour
     {
         foreach (var itemCraft in itemCrafts)
         { 
-            itemCraft.close = Close;
+            itemCraft.closeButton.onClick.AddListener (Close);
             itemCraft.craftButton.onClick.AddListener(itemCraft.Craft);
         }
     }
