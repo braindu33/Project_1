@@ -24,4 +24,12 @@ public class Levels
 
 public class NexLevel : Monobehaviour
 {
-    [FormerlySerializedAs(level
+    [FormerlySerializedAs("level")] [SerializeField] private List<Levels> levels = new();
+
+    private void Awake()
+    {
+        foreach( var level in levels)
+        {
+            level.nexLevelButton.onClick.AddListener(level.LevelUp);
+    }
+}
