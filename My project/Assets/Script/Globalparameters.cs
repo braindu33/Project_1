@@ -8,8 +8,20 @@ public class Globalparameters : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        
-        
+        Cursor.lockState = CursorLockMode.Locked;     
     }
 }
+
+public class Levels
+{
+    [SerializeField] public Button nexLevelButton;
+
+    public void LevelUp()
+    {
+        gameObject.SetActive(true);
+    }
+}
+
+public class NexLevel : Monobehaviour
+{
+    
