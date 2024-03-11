@@ -9,16 +9,15 @@ public class ItemBuy
     [SerializeField] public int woodCount = 50;
     [SerializeField] public Vector3 positionSpawn;
     [SerializeField] public Button buyButton;
+    [SerializeField] public Button closeButton;
     
     public Spawner spawner;
-    public Action close;
-
+    
     public void Buy()
     {
         if (Inventory.Instance.RemoveResource(woodIndex, woodCount)) 
         { 
             spawner.Spawn(positionSpawn);
         }
-        close.Invoke();
     }
 }
