@@ -24,4 +24,4 @@ public class Levels
 
 public class NexLevel : Monobehaviour
 {
-    
+    [FormerlySerializedAs(level
