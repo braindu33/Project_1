@@ -19,6 +19,7 @@ public class Levels
     public void LevelUp()
     {
         gameObject.SetActive(true);
+        Debug.Log("Level unlocked ");
     }
 }
 
