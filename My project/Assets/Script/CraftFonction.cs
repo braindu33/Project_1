@@ -12,7 +12,6 @@ public class CraftFonction : MonoBehaviour
     {
         foreach (var itemCraft in itemCrafts)
         { 
-            itemCraft.closeButton.onClick.AddListener (Close);
             itemCraft.craftButton.onClick.AddListener(itemCraft.Craft);
         }
     }
@@ -29,7 +28,7 @@ public class CraftFonction : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
     
-    private void Close()
+    public void Close()
     {
         gameObject.SetActive(false);
         Cursor.visible = false;

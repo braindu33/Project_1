@@ -14,7 +14,6 @@ public class BuyabbleFonction : MonoBehaviour
         foreach(var itemBuy in itemBuys)
         {
             itemBuy.buyButton.onClick.AddListener(itemBuy.Buy);
-itemBuy.closeButton.onClick.AddListener(Close);
         }
     }
 

@@ -59,6 +59,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aebaad180897b55408b3a927f050ebdc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6709699736418909777}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aebaad180897b55408b3a927f050ebdc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -941154942050824149}
   m_SourcePrefab: {fileID: 100100000, guid: aebaad180897b55408b3a927f050ebdc, type: 3}
 --- !u!1 &8034547903740508183 stripped
 GameObject:
@@ -80,3 +83,17 @@ MonoBehaviour:
   interval: 2
   resourceNumber: 5
   index: 0
+--- !u!114 &-941154942050824149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8034547903740508183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ae3699e84a9684ca5d2750ae8a682e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quantity: 1
+  prefab: {fileID: 8034547903740508183}

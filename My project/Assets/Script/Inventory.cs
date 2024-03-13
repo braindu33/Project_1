@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     public static Inventory Instance { get; private set;}
     
     public List<Resource> resources = new();
+    public List<XpFunction> xp = new();
     
     [SerializeField] private int emptyHandAttackForce = 1;
     [SerializeField] private int emptyHandHarvestLevel= 1;
@@ -60,9 +61,14 @@ public class Inventory : MonoBehaviour
         return resources[index].RemoveResource(resourceToRemove);
     }
 
-    public bool GetResourceToRemove(int index, int resource)
+    public XpFunction GetXp(int xpIndex)
     {
-        return resources[index].RemoveResource(resource);
+        return xp[xpIndex];
+    }
+
+    public bool GetXp(int index, int value)
+    {
+        return xp[index].RemoveXp(value);
     }
 
     public bool TrySetItemInEmptySlot(GameObject item)

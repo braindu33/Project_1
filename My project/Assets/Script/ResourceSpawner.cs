@@ -7,11 +7,7 @@ public class ResourceSpawner : MonoBehaviour
 {
     [SerializeField] private int quantity = 5;
     [SerializeField] private GameObject prefab;
-
-    private void Update()
-    {
-        
-    }
+    
 
     public void Spawn()
     {

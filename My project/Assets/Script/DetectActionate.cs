@@ -11,30 +11,21 @@ public class DetectActionate : MonoBehaviour
     [SerializeField] private float distance = 3;
     [SerializeField] private LayerMask layers;
     
-    /*[SerializeField] private bool openCraftInterface;
-    [SerializeField] private bool openBuyInterface;*/
-    //[FormerlySerializedAs("openInterface")] [SerializeField] private List<OpenInterface> openInterfaces = new();
+    [SerializeField] private CraftFonction craft;
+    [SerializeField] private BuyabbleFonction buy;
+    //[FormerlySerializedAs("getXpFunction")] [SerializeField] private List<GetXpFunction> getXpFunctions = new();
     
     private RaycastHit hit;
     private Actionable objectLooked; 
     private Actionable actionable;
     private Actionable actionableInHand;
-
+    
     private GetResourceFunction get;
     private PickableFonction pick;
 
     private OpenCraftInterface openCraft;
     private OpenBuyInterface openBuy;
     private GameObject open1, open2;
-
-    /*[SerializeField] private BuyabbleFonction buy;
-    private GameObject buy1;
-    [SerializeField] private CraftFonction craft;
-    private GameObject craft1;*/
-
-
-    /*private GameObject player;
-    private OpenInterface distanceToOpen;*/
     
     private float _waitingTimeBetweenActions = 0.7f;
     
@@ -43,20 +34,16 @@ public class DetectActionate : MonoBehaviour
 
     private void Awake()
     {
+        /*foreach (var getXpFunction in getXpFunctions)
+        {
+            getXpFunction.get = ActionateObjectTake;
+        }*/
 
         open1 = GameObject.FindGameObjectWithTag("Craft");
         openCraft = open1.GetComponent<OpenCraftInterface>();
 
         open2 = GameObject.FindGameObjectWithTag("Shop");
         openBuy = open2.GetComponent<OpenBuyInterface>();
-
-        /*foreach (var openInterface in openInterfaces)
-        {
-            openInterface.openCraftInterface =
-        }*/
-
-        /*buy1 = GameObject.FindGameObjectWithTag("Shop");
-        craft1 = GameObject.FindGameObjectWithTag("Craft");*/
     }
 
     private void Start()
@@ -160,5 +147,11 @@ public class DetectActionate : MonoBehaviour
 
         if (openBuy)
             openBuy.OpenInterfaceBuy();
+    }
+
+    public void Escape()
+    {
+        buy.Close();
+        craft.Close();
     }
 }

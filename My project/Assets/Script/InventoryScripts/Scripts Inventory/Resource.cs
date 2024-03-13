@@ -46,7 +46,7 @@ public class Resource
 
         if (other.Data != _data) throw new System.Exception("Try to merge different types items.");
 
-        int total = other.count + count;
+        var total = other.count + count;
 
         if (total <= _data.stackMaxCount)
         {
