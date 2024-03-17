@@ -66,10 +66,20 @@ public class Inventory : MonoBehaviour
         return xp[xpIndex];
     }
 
-    public bool GetXp(int index, int value)
+    public bool RemoveXp(int index, int value)
     {
         return xp[index].RemoveXp(value);
     }
+
+    public bool GetXpCount(int index)
+    {
+        return xp[index].GetCount;
+    }
+
+    /*public int XpForNextLevel(int value)
+    {
+        
+    }*/
 
     public bool TrySetItemInEmptySlot(GameObject item)
     {

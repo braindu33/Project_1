@@ -83,6 +83,8 @@ MonoBehaviour:
   interval: 2
   resourceNumber: 5
   index: 0
+  xpIndex: 0
+  xpValue: 1
 --- !u!114 &-941154942050824149
 MonoBehaviour:
   m_ObjectHideFlags: 0

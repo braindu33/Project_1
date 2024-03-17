@@ -71,9 +71,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: effa75e73ee35cf49af159b19160cf5d, type: 3}
       insertIndex: -1
       addedObject: {fileID: -8335408517311228540}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: effa75e73ee35cf49af159b19160cf5d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -2320925514906626784}
     - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: effa75e73ee35cf49af159b19160cf5d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5176846484414089427}
@@ -224,10 +221,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  attackForce: 3
+  attackForce: 5
   harvestCategories:
   - wood
-  harvestLevel: 10
+  harvestLevel: 5
 --- !u!114 &-8335408517311228540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,18 +240,6 @@ MonoBehaviour:
   outlines:
   - {fileID: 560183755009915238}
   - {fileID: 5176846484414089427}
---- !u!114 &-2320925514906626784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080650730838919797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f213eec06d7df40881a25c6b8deb3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7550547042948740916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -516098083770646512, guid: effa75e73ee35cf49af159b19160cf5d, type: 3}

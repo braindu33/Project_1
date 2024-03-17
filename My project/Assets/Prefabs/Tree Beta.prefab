@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5363851698814686223}
   - component: {fileID: -1499953538075644101}
   m_Layer: 0
-  m_Name: Tree
+  m_Name: Tree Beta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,8 +56,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 14, z: 1}
-  m_Center: {x: 14, y: 7, z: 0}
+  m_Size: {x: 1, y: 13.097342, z: 1}
+  m_Center: {x: 14, y: 7.451329, z: 0}
 --- !u!114 &5363851698814686222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e39149f208123498992997c455c1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 50
+  maxLife: 30
   lifeReachedMin:
     m_PersistentCalls:
       m_Calls:
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantity: 5
-  prefab: {fileID: 3151888554530622345, guid: 40bb9f4d91a83204b9d5a8c863ecac80, type: 3}
+  prefab: {fileID: 943633207150257559, guid: edd01ce4df5c37d43a2b95d200cefba3, type: 3}
 --- !u!114 &-1499953538075644101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   harvestCategory: wood
-  harvestLevelMin: 10
+  harvestLevelMin: 5
 --- !u!1001 &5363851697125772056
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,12 +7,12 @@ using UnityEngine;
 public class HarvestableFunction : MonoBehaviour
 {
     [SerializeField] private string harvestCategory = "wood";
-    [SerializeField] private int harvestLevelMin = 5;
+    [SerializeField] private int harvestLevelMin;
     
-    private Health health;
+    private LifeSystem life;
     void Start()
     {
-        health = GetComponent<Health>();
+        life = GetComponent<LifeSystem>();
     }
 
     public void Harvest()
@@ -22,7 +22,7 @@ public class HarvestableFunction : MonoBehaviour
         if (inventory.GetPlayerHarvestLevel() >= harvestLevelMin 
             && inventory.GetPlayerHarvestCategories().Contains(harvestCategory))
         {
-            health.Decrease(inventory.GetPlayerAttackForce());
+            life.Decrease(inventory.GetPlayerAttackForce());
         }
     }
 }

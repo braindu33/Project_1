@@ -11,9 +11,6 @@ public class GetResourceFunction : MonoBehaviour
     [SerializeField] private int index;
     [SerializeField] private int xpIndex;
     [SerializeField] private int xpValue;
-
-    /*[SerializeField] private string[] getTagCategory; 
-    public string[] GetCategory => getTagCategory;*/
     
     private void Awake()
     {

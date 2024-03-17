@@ -33,5 +33,5 @@ public class XpFunction
         return true;
     }
 
-    public bool GetCount => value == 5;
+    public bool GetCount => value == 60;
 }

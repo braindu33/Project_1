@@ -12,16 +12,19 @@ public class Levels : MonoBehaviour
     [SerializeField] public Vector3 positionToSpawn;
     
     public Spawner spawner;
-    public NexLevel next;
-    public XpFunction get;
     
     public Action close;
 
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void LevelUp()
     {
+        gameObject.SetActive(true);
         Debug.Log("One");
-            
-        if (Inventory.Instance.GetXp(xpIndex, xpToRemove))
+        if (Inventory.Instance.RemoveXp(xpIndex, xpToRemove))
         {
             Debug.Log("Two");
             spawner.Spawn(positionToSpawn);

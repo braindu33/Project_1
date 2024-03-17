@@ -16,8 +16,7 @@ public class PickableFonction : MonoBehaviour
 
     private Animator _handAnimator;
     private int _animParameterPickup;
-
-    private string test;
+    
     [SerializeField] private int attackForce = 3;
     public int AttackForce => attackForce;
 
@@ -36,7 +35,6 @@ public class PickableFonction : MonoBehaviour
     [ContextMenu("Rammasser")]
     public void Pickup()
     {
-
         if (!_inventory.TrySetItemInEmptySlot(gameObject)) return;
             onPickUp.Invoke();
 
@@ -44,10 +42,11 @@ public class PickableFonction : MonoBehaviour
         _animParameterPickup = Animator.StringToHash("Pickup");
         _handAnimator.SetTrigger(_animParameterPickup);
 
-        transform.parent = _inventory.GetComponent<Transform>();
-        transform.localPosition = pickupPosition;
-        transform.localRotation = pickupRotation;
-        transform.localScale = Vector3.one;
+        Transform transform1;
+        (transform1 = transform).parent = _inventory.GetComponent<Transform>();
+        transform1.localPosition = pickupPosition;
+        transform1.localRotation = pickupRotation;
+        transform1.localScale = Vector3.one;
 
         _rigidbody.useGravity = false;
         _rigidbody.isKinematic = true;

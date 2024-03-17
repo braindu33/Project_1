@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private int attackForce = 10;*/
 
     private LifeSystem _lifeSystem;
+    private GameObject player;
     
     void Awake()
     {

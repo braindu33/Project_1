@@ -4,23 +4,30 @@ namespace Script
 {
     public class AutoFarming : MonoBehaviour
     {
-        [SerializeField] private float interval = 5f;
-
-        [SerializeField] private int resourceNumber;
-
+        [SerializeField] private float interval = 2f;
+        [SerializeField] private int resourceNumber; 
         [SerializeField] private int index;
+        [SerializeField] private int xpIndex;
+        [SerializeField] private int xpValue;
 
-        private int _value;
+        private int value;
 
         private void Awake()
         {
             InvokeRepeating(nameof(PerformAutoFarmAction), 2f, interval);
+            InvokeRepeating(nameof(PerformAutoXpFarmAction), 2f, interval);
         }
 
         private void PerformAutoFarmAction()
         {
-            _value += resourceNumber;
-            ResourceUIController.Instance.UpdateResourceUI(index, _value);
+            value += resourceNumber;
+            ResourceUIController.Instance.UpdateResourceUI(index, value);
+        }
+
+        private void PerformAutoXpFarmAction()
+        {
+            value += xpValue;
+            ResourceUIController.Instance.UpdateXpUI(xpIndex, value);
         }
     }
 }
