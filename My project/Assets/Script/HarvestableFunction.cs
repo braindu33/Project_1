@@ -10,6 +10,7 @@ public class HarvestableFunction : MonoBehaviour
     [SerializeField] private int harvestLevelMin;
     
     private LifeSystem life;
+    private Animator harvestAnimation;
     void Start()
     {
         life = GetComponent<LifeSystem>();
@@ -17,12 +18,14 @@ public class HarvestableFunction : MonoBehaviour
 
     public void Harvest()
     {
-        Inventory inventory = Inventory.Instance;
+        var inventory = Inventory.Instance;
+        harvestAnimation = GetComponent<Animator>();
 
-        if (inventory.GetPlayerHarvestLevel() >= harvestLevelMin 
-            && inventory.GetPlayerHarvestCategories().Contains(harvestCategory))
+        if (inventory.GetPlayerHarvestLevel() < harvestLevelMin
+            || inventory.GetPlayerHarvestCategories().Contains(harvestCategory))
         {
             life.Decrease(inventory.GetPlayerAttackForce());
+            harvestAnimation.SetTrigger("Harvest");
         }
     }
 }

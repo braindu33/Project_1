@@ -13,7 +13,7 @@ public class DamageFunction : MonoBehaviour
 
     void Awake()
     {
-        _health = GetComponent<Health>();
+        _health = _player.GetComponent<Health>();
         _player = GameObject.FindGameObjectWithTag("Player");
     }
 

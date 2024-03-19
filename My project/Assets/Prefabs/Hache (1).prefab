@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1161538381616953124
+--- !u!1001 &5504898675476845148
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.315548
+      value: -9.123085
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 5.88
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.225359
+      value: 22.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       propertyPath: m_Name
-      value: Hache
+      value: Hache (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58,35 +58,58 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9126352147795948828}
+      addedObject: {fileID: 8009410767440675737}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4050212439215430680}
+      addedObject: {fileID: 4888663493376878252}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3569855740416117325}
+      addedObject: {fileID: 1401280033887772792}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -6490533413534376300}
+      addedObject: {fileID: 4129184005661301818}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -8335408517311228540}
+      addedObject: {fileID: 5485183355178666344}
     - targetCorrespondingSourceObject: {fileID: -516098083770646512, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 560183755009915238}
+      addedObject: {fileID: 7037438547315515524}
   m_SourcePrefab: {fileID: 100100000, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
---- !u!1 &2080650730838919797 stripped
+--- !u!1 &3797422526930850380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -516098083770646512, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
+  m_PrefabInstance: {fileID: 5504898675476845148}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7037438547315515524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797422526930850380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ecd56081cc1dd4b9114eb2900282fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!1 &4657916068094668557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
-  m_PrefabInstance: {fileID: 1161538381616953124}
+  m_PrefabInstance: {fileID: 5504898675476845148}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &9126352147795948828
+--- !u!54 &8009410767440675737
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080650730838919797}
+  m_GameObject: {fileID: 4657916068094668557}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -107,13 +130,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4050212439215430680
+--- !u!65 &4888663493376878252
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080650730838919797}
+  m_GameObject: {fileID: 4657916068094668557}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -128,13 +151,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.22916669, y: 0.16041665, z: 1.8395061}
   m_Center: {x: 0, y: 0, z: 0.08024692}
---- !u!65 &3569855740416117325
+--- !u!65 &1401280033887772792
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080650730838919797}
+  m_GameObject: {fileID: 4657916068094668557}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -147,26 +170,26 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.93450713, y: 0.16041665, z: 0.45030385}
-  m_Center: {x: -0.1890267, y: 0.000000073389764, z: 0.7748604}
---- !u!114 &-6490533413534376300
+  m_Size: {x: 0.898057, y: 0.16041665, z: 0.45030385}
+  m_Center: {x: 0.14874125, y: -3.9060992e-15, z: 0.7748675}
+--- !u!114 &4129184005661301818
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080650730838919797}
+  m_GameObject: {fileID: 4657916068094668557}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d21118b0e5c4fe498c82443941398fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickupPosition: {x: 1.28, y: -0.3, z: 1.24}
-  pickupRotation: {x: 0.49999994, y: -0.5, z: -0.5, w: -0.49999994}
+  pickupRotation: {x: -0.3535534, y: -0.6123724, z: -0.6123724, w: 0.3535534}
   onPickUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -8335408517311228540}
+      - m_Target: {fileID: 5485183355178666344}
         m_TargetAssemblyTypeName: StudioXP.Scripts.Objects.OutlineGroupModifier,
           Assembly-CSharp
         m_MethodName: Deactivate
@@ -182,7 +205,7 @@ MonoBehaviour:
   onDrop:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -8335408517311228540}
+      - m_Target: {fileID: 5485183355178666344}
         m_TargetAssemblyTypeName: StudioXP.Scripts.Objects.OutlineGroupModifier,
           Assembly-CSharp
         m_MethodName: Activate
@@ -199,40 +222,17 @@ MonoBehaviour:
   harvestCategories:
   - wood
   harvestLevel: 5
---- !u!114 &-8335408517311228540
+--- !u!114 &5485183355178666344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080650730838919797}
+  m_GameObject: {fileID: 4657916068094668557}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acd45d828278fda4e92724f9eb930a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outlines:
-  - {fileID: 560183755009915238}
---- !u!1 &7550547042948740916 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -516098083770646512, guid: 691419ed71df8df41bbceb1849ba68ac, type: 3}
-  m_PrefabInstance: {fileID: 1161538381616953124}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &560183755009915238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7550547042948740916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ecd56081cc1dd4b9114eb2900282fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 0, b: 0, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
+  - {fileID: 7037438547315515524}

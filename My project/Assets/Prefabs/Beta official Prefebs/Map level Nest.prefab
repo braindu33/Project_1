@@ -3712,11 +3712,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1512198699348561820}
   - component: {fileID: 7838738988113749882}
-  - component: {fileID: 6959076421099446688}
-  - component: {fileID: 4527548104195975187}
-  - component: {fileID: 4228565012269856621}
+  - component: {fileID: 7971148200544600293}
   m_Layer: 0
-  m_Name: Principale map
+  m_Name: Map level Nest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3753,35 +3751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quantity: 1
   prefab: {fileID: 8808601997889448223}
---- !u!114 &6959076421099446688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8808601997889448223}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c94cecacac506468405f767ef2994a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  treeObject: {fileID: 8394901520085966130, guid: 794ef26d250a1944cbb8907a9505b54d, type: 3}
-  treeAmount: 10
---- !u!114 &4527548104195975187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8808601997889448223}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 736d0bc59dfe5cb4492509316e27eda4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rockObject: {fileID: 8630370098149260470, guid: e1d261e024cc5ed41a4225124f3e8f1a, type: 3}
-  rockAmount: 10
---- !u!114 &4228565012269856621
+--- !u!114 &7971148200544600293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3790,10 +3760,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8808601997889448223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d65a9ab70a7d692468c64ea8323d587a, type: 3}
+  m_Script: {fileID: 11500000, guid: f3fcc2dcba394fe69a1c16dee5db6733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nexLevel: {fileID: 3868941283049800006, guid: c614fcb1495fa0246a77e70039025fb6, type: 3}
+  xpIndex: 0
+  xpToRemove: 10
+  nexLevelButton: {fileID: 0}
+  positionToSpawn: {x: -5, y: 0, z: -106}
+  spawner: {fileID: 7838738988113749882}
 --- !u!1 &9010447889157058064
 GameObject:
   m_ObjectHideFlags: 0

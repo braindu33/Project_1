@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DetectActionate : MonoBehaviour
 {
@@ -7,7 +7,8 @@ public class DetectActionate : MonoBehaviour
     
     [SerializeField] private CraftFonction craft;
     [SerializeField] private BuyabbleFonction buy;
-    private HarvestableFunction harvest;
+    private HarvestableFunction harvestRock;
+    private HarvestableFunction harvestTree;
     private RaycastHit hit;
     
     private Actionable objectLooked; 
@@ -21,20 +22,29 @@ public class DetectActionate : MonoBehaviour
     private OpenCraftInterface openCraft;
     private OpenBuyInterface openBuy;
     private GameObject open1, open2;
+
+    private GameObject rock;
+    private GameObject tree;
     
     //private float _waitingTimeBetweenActions = 0.7f;
     
     /*private Animator _handAnimator; 
     private int _animParameterHit;*/
 
-    /*private void Awake()
+    private void Awake()
     {
-        open1 = GameObject.FindGameObjectWithTag("Craft");
+        /*open1 = GameObject.FindGameObjectWithTag("Craft");
         openCraft = open1.GetComponent<OpenCraftInterface>();
 
         open2 = GameObject.FindGameObjectWithTag("Shop");
-        openBuy = open2.GetComponent<OpenBuyInterface>();
-    }*/
+        openBuy = open2.GetComponent<OpenBuyInterface>();*/
+
+        rock = GameObject.FindGameObjectWithTag("rock");
+        harvestRock = rock.GetComponent<HarvestableFunction>();
+
+        tree = GameObject.FindGameObjectWithTag("tree");
+        harvestTree = tree.GetComponent<HarvestableFunction>();
+    }
 
     private void Start()
     {
@@ -80,9 +90,13 @@ public class DetectActionate : MonoBehaviour
             if(!Physics.Raycast(ray, out hit, distance)) return;
         }
 
-        harvest = hit.collider.GetComponent<HarvestableFunction>();
-        if (harvest) 
-            harvest.Harvest();
+        harvestTree = hit.collider.GetComponent<HarvestableFunction>();
+        if (harvestTree) 
+            harvestTree.Harvest();
+        
+        harvestRock = hit.collider.GetComponent<HarvestableFunction>();
+        if (harvestRock) 
+            harvestRock.Harvest();
     }
 
     public void ActionateObjectSecondAction()

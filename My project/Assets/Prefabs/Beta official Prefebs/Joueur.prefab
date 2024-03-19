@@ -43,7 +43,7 @@ Animator:
   m_GameObject: {fileID: 1275582162907435519}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ac9899e408e2d174b8fdbe83f9fc497f, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 7287977725490245514}
   - component: {fileID: 6294597332194942487}
   - component: {fileID: 2319677741293694830}
-  - component: {fileID: 1431324869825338216}
+  - component: {fileID: 598859349236077854}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -149,7 +149,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2325732003245153235}
   m_Enabled: 1
---- !u!114 &1431324869825338216
+--- !u!114 &598859349236077854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,10 +158,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2325732003245153235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96832eb7502cf44eb846dabdba7c927, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d28187909884a66abad3526a3c27d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 15
+  distance: 10
   craft: {fileID: 4729789810958578179, guid: e2914673540a17e498d9405a6534b912, type: 3}
   buy: {fileID: 7223501389534758956, guid: 020471654c5356b459ee9cfb7a6bbc9e, type: 3}
 --- !u!1 &4359213262409435737
@@ -486,7 +486,7 @@ MonoBehaviour:
     buttonDown:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1431324869825338216}
+        - m_Target: {fileID: 598859349236077854}
           m_TargetAssemblyTypeName: DetectActionate, Assembly-CSharp
           m_MethodName: ActionateObjectFirstAction
           m_Mode: 1
@@ -512,7 +512,7 @@ MonoBehaviour:
     buttonDown:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1431324869825338216}
+        - m_Target: {fileID: 598859349236077854}
           m_TargetAssemblyTypeName: DetectActionate, Assembly-CSharp
           m_MethodName: ActionateObjectSecondAction
           m_Mode: 1
@@ -538,7 +538,7 @@ MonoBehaviour:
     buttonDown:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1431324869825338216}
+        - m_Target: {fileID: 598859349236077854}
           m_TargetAssemblyTypeName: DetectActionate, Assembly-CSharp
           m_MethodName: ActionateObjectTake
           m_Mode: 1
@@ -602,7 +602,7 @@ MonoBehaviour:
     buttonDown:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1431324869825338216}
+        - m_Target: {fileID: 598859349236077854}
           m_TargetAssemblyTypeName: DetectActionate, Assembly-CSharp
           m_MethodName: ActionateInteractedObject
           m_Mode: 1
@@ -628,7 +628,7 @@ MonoBehaviour:
     buttonDown:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1431324869825338216}
+        - m_Target: {fileID: 598859349236077854}
           m_TargetAssemblyTypeName: DetectActionate, Assembly-CSharp
           m_MethodName: Escape
           m_Mode: 1

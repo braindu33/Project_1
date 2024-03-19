@@ -14,8 +14,8 @@ public class Inventory : MonoBehaviour
     [SerializeField] private int emptyHandHarvestLevel= 1;
     
     [SerializeField] private int size = 4;
-    private int _currentSlot = 0;
-    private GameObject[] _slots;
+    private int currentSlot = 0;
+    private GameObject[] slots;
 
     private int interfaceToOpen;
     private GameObject[] @interface;
@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
         if (Instance == null)
             Instance = this;
 
-        _slots = new GameObject[size];
+        slots = new GameObject[size];
     }
     
     public int GetPlayerAttackForce()
@@ -83,24 +83,57 @@ public class Inventory : MonoBehaviour
 
     public bool TrySetItemInEmptySlot(GameObject item)
     {
-        if (_slots[_currentSlot])
+        if (slots[currentSlot])
             return false;
 
-        _slots[_currentSlot] = item;
+        slots[currentSlot] = item;
         return true;
     }
     
     public GameObject GetCurrentItem()
     {
-        return _slots[_currentSlot];
+        return slots[currentSlot];
     }
 
     public void RemoveCurrentSlot()
     {
-        if (!_slots[_currentSlot])
+        if (!slots[currentSlot])
             return;
 
-        GameObject item = _slots[_currentSlot];
-        _slots[_currentSlot] = null;
+        GameObject item = slots[currentSlot];
+        slots[currentSlot] = null;
+    }
+    
+    public void Select(int slot)
+    {
+        if (slot >= size)
+        {
+            slot = 0;
+        }else if (slot < 0)
+        {
+            slot = size - 1;
+        }
+
+        if (slot == currentSlot) return;
+
+        GameObject currentInteractable = GetCurrentItem();
+        if (currentInteractable)
+            currentInteractable.SetActive(false);
+
+        currentSlot = slot;
+        
+        currentInteractable = GetCurrentItem();
+        if (currentInteractable)
+            currentInteractable.SetActive(true);
+    }
+
+    public void NextSlot()
+    {
+        Select(currentSlot + 1);
+    }
+
+    public void PreviousSlot()
+    {
+        Select(currentSlot - 1);
     }
 }

@@ -20,7 +20,7 @@ public class TreeGenerator : MonoBehaviour
         {
             treesList.Add(Instantiate<GameObject>(treeObject));
             treesArray = treesList.ToArray();
-            treesArray[i].transform.position = new Vector3(Random.Range(-42, 42), 0, Random.Range(-42, 42));
+            treesArray[i].transform.position = new Vector3(Random.Range(-42, 42), (float)3.5, Random.Range(-42, 42));
             //treesArray[i].transform.parent = treesInWorldObject.transform;
         }
     }
