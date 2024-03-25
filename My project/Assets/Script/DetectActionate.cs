@@ -7,13 +7,10 @@ public class DetectActionate : MonoBehaviour
     
     [SerializeField] private CraftFonction craft;
     [SerializeField] private BuyabbleFonction buy;
-    private HarvestableFunction harvestRock;
-    private HarvestableFunction harvestTree;
+    [SerializeField] private HarvestableFunction harvestTree, harvestRock;
+
+    private OpenAndClose openAndClose;
     private RaycastHit hit;
-    
-    private Actionable objectLooked; 
-    private Actionable actionable;
-    private Actionable actionableInHand;
     
     private GetResourceFunction get;
     private PickableFonction pick;
@@ -25,6 +22,14 @@ public class DetectActionate : MonoBehaviour
 
     private GameObject rock;
     private GameObject tree;
+
+    private Animator harvestRockAnimation;
+    private static readonly int ShakeStep1 = Animator.StringToHash("First Shake");
+    private static readonly int ShakeStep2 = Animator.StringToHash("Second Shake");
+    private static readonly int ShakeStep3 = Animator.StringToHash("Third Shake");
+    private static readonly int ShakeFinalStep = Animator.StringToHash("Final Shake");
+
+    private int clickCount = 0;
     
     //private float _waitingTimeBetweenActions = 0.7f;
     
@@ -39,11 +44,11 @@ public class DetectActionate : MonoBehaviour
         open2 = GameObject.FindGameObjectWithTag("Shop");
         openBuy = open2.GetComponent<OpenBuyInterface>();*/
 
-        rock = GameObject.FindGameObjectWithTag("rock");
-        harvestRock = rock.GetComponent<HarvestableFunction>();
-
         tree = GameObject.FindGameObjectWithTag("tree");
         harvestTree = tree.GetComponent<HarvestableFunction>();
+        
+        rock = GameObject.FindGameObjectWithTag("rock");
+        harvestRock = rock.GetComponent<HarvestableFunction>();
     }
 
     private void Start()
@@ -54,7 +59,7 @@ public class DetectActionate : MonoBehaviour
 
     private void Update()
     {
-        DetectActionable();
+        //DetectActionable();
     }
 
     private void DetectActionable()
@@ -80,6 +85,7 @@ public class DetectActionate : MonoBehaviour
     }
     public void ActionateObjectFirstAction()
     {
+        clickCount++;
         if (Camera.main != null)
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -92,16 +98,33 @@ public class DetectActionate : MonoBehaviour
 
         harvestTree = hit.collider.GetComponent<HarvestableFunction>();
         if (harvestTree) 
-            harvestTree.Harvest();
+            harvestTree.HarvestTree();
         
+
         harvestRock = hit.collider.GetComponent<HarvestableFunction>();
-        if (harvestRock) 
-            harvestRock.Harvest();
+        if(harvestRock) return;
+        switch (clickCount)
+        {
+            case 1:
+                harvestRockAnimation.SetTrigger(ShakeStep1);
+                break;
+            case 2:
+                harvestRockAnimation.SetTrigger(ShakeStep2);
+                break;
+            case 3:
+                harvestRockAnimation.SetTrigger(ShakeStep3);
+                break;
+            case 4:
+                harvestRockAnimation.SetTrigger(ShakeFinalStep);
+                break;
+        }
+        //harvestRock.HarvestRock();
+        
     }
 
     public void ActionateObjectSecondAction()
     {
-        var item = Inventory.Instance.GetCurrentItem();
+        /*var item = Inventory.Instance.GetCurrentItem();
         if (item)
         {
             actionableInHand = item.GetComponent<Actionable>();
@@ -121,7 +144,7 @@ public class DetectActionate : MonoBehaviour
         if(actionable) 
         {
             actionable.SecondAction();
-        }
+        }*/
     }
 
     public void ActionateObjectTake()
@@ -133,11 +156,8 @@ public class DetectActionate : MonoBehaviour
             if (!Physics.Raycast(ray, out hit, distance)) return;
         
             get = hit.collider.GetComponent<GetResourceFunction>();
-
             if (get)
                 get.GetResource();
-
-            if (!Physics.Raycast(ray, out hit, distance)) return;
         }
 
         pick = hit.collider.GetComponent<PickableFonction>();   
@@ -152,6 +172,18 @@ public class DetectActionate : MonoBehaviour
 
         if (openBuy)
             openBuy.OpenInterfaceBuy();
+        
+        /*if(Camera.main == null) return;
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
+        if(Physics.Raycast(ray, out hit, 5)) return;
+
+        openAndClose = hit.collider.GetComponent<OpenAndClose>();
+        if(openAndClose)
+            openAndClose.OpenDoor();
+        
+        /*if(door)
+            door.OpenDoor();*/
     }
 
     public void Escape()

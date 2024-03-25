@@ -8,7 +8,16 @@ public class LifeSystem : MonoBehaviour
     
     [SerializeField] private UnityEvent lifeReachedMin;
     
-    private int _currentLife;   // Current life points
+    private GameObject rock;
+    
+    private int _currentLife; // Current life points
+    private RaycastHit hit;
+    
+
+
+    private void Awake()
+    {
+    }
 
     void Start()
     {

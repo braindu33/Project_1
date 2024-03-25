@@ -9,6 +9,7 @@ TagManager:
   - tree
   - Shop
   - Craft
+  - Door
   layers:
   - Default
   - TransparentFX

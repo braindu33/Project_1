@@ -11,15 +11,15 @@ public class OpenBuyInterface : MonoBehaviour
 
     public void OpenInterfaceBuy()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Camera.main == null) return;
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (!Physics.Raycast(ray, out hit, maxDistanceToOpen)) return;
         
-        if (Physics.Raycast(ray, out hit, maxDistanceToOpen))
+        openBuyInterface = hit.collider.GetComponent<OpenBuyInterface>();
+        if (openBuyInterface)
         {
-            openBuyInterface = hit.collider.GetComponent<OpenBuyInterface>();
-            if (openBuyInterface)
-            {
-                buy.Open();
-            }
+            buy.Open();
         }
     }
 }
