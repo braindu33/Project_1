@@ -22,14 +22,6 @@ public class DetectActionate : MonoBehaviour
 
     private GameObject rock;
     private GameObject tree;
-
-    private Animator harvestRockAnimation;
-    private static readonly int ShakeStep1 = Animator.StringToHash("First Shake");
-    private static readonly int ShakeStep2 = Animator.StringToHash("Second Shake");
-    private static readonly int ShakeStep3 = Animator.StringToHash("Third Shake");
-    private static readonly int ShakeFinalStep = Animator.StringToHash("Final Shake");
-
-    private int clickCount = 0;
     
     //private float _waitingTimeBetweenActions = 0.7f;
     
@@ -38,11 +30,6 @@ public class DetectActionate : MonoBehaviour
 
     private void Awake()
     {
-        /*open1 = GameObject.FindGameObjectWithTag("Craft");
-        openCraft = open1.GetComponent<OpenCraftInterface>();
-
-        open2 = GameObject.FindGameObjectWithTag("Shop");
-        openBuy = open2.GetComponent<OpenBuyInterface>();*/
 
         tree = GameObject.FindGameObjectWithTag("tree");
         harvestTree = tree.GetComponent<HarvestableFunction>();
@@ -85,7 +72,6 @@ public class DetectActionate : MonoBehaviour
     }
     public void ActionateObjectFirstAction()
     {
-        clickCount++;
         if (Camera.main != null)
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -93,6 +79,7 @@ public class DetectActionate : MonoBehaviour
             var itemInHand = Inventory.Instance.GetCurrentItem();
             if (!itemInHand) return;
         
+            
             if(!Physics.Raycast(ray, out hit, distance)) return;
         }
 
@@ -100,25 +87,9 @@ public class DetectActionate : MonoBehaviour
         if (harvestTree) 
             harvestTree.HarvestTree();
         
-
         harvestRock = hit.collider.GetComponent<HarvestableFunction>();
-        if(harvestRock) return;
-        switch (clickCount)
-        {
-            case 1:
-                harvestRockAnimation.SetTrigger(ShakeStep1);
-                break;
-            case 2:
-                harvestRockAnimation.SetTrigger(ShakeStep2);
-                break;
-            case 3:
-                harvestRockAnimation.SetTrigger(ShakeStep3);
-                break;
-            case 4:
-                harvestRockAnimation.SetTrigger(ShakeFinalStep);
-                break;
-        }
-        //harvestRock.HarvestRock();
+        if (harvestRock)
+            harvestRock.HarvestRock();
         
     }
 

@@ -29,26 +29,23 @@ public class Inventory : MonoBehaviour
     
     public int GetPlayerAttackForce()
     {
-        var _pickableInHand = GetComponentInChildren<PickableFonction>();
+        var pickableInHand = GetComponentInChildren<PickableFonction>();
 
-        if(!_pickableInHand) return emptyHandAttackForce;
-        return _pickableInHand.AttackForce;
+        return !pickableInHand ? emptyHandAttackForce : pickableInHand.AttackForce;
     }
 
     public int GetPlayerHarvestLevel()
     {
-        var _pickableInHand = GetComponentInChildren<PickableFonction>();
+        var pickableInHand = GetComponentInChildren<PickableFonction>();
 
-        if(!_pickableInHand) return emptyHandHarvestLevel;
-        return _pickableInHand.HarvestLevel;
+        return !pickableInHand ? emptyHandHarvestLevel : pickableInHand.HarvestLevel;
     }
 
     public string[] GetPlayerHarvestCategories()
     {
-        var _pickableInHand = GetComponentInChildren<PickableFonction>();
+        var pickableInHand = GetComponentInChildren<PickableFonction>();
 
-        if(!_pickableInHand) return null;
-        return _pickableInHand.HarvestCategories;
+        return !pickableInHand ? null : pickableInHand.HarvestCategories;
     }
 
     public Resource GetResource(int index)
@@ -75,11 +72,6 @@ public class Inventory : MonoBehaviour
     {
         return xp[index].GetCount;
     }
-
-    /*public int XpForNextLevel(int value)
-    {
-        
-    }*/
 
     public bool TrySetItemInEmptySlot(GameObject item)
     {

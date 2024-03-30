@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,9 +12,8 @@ public class LifeSystem : MonoBehaviour
     
     private GameObject rock;
     
-    private int _currentLife; // Current life points
+    private int currentLife; // Current life points
     private RaycastHit hit;
-    
 
 
     private void Awake()
@@ -22,16 +23,16 @@ public class LifeSystem : MonoBehaviour
     void Start()
     {
         // Initialize the object's life points
-        _currentLife = maxLife;
+        currentLife = maxLife;
     }
 
     private void SetLife(int newLife)
     {
         // Set the object's life to a specific value
-        _currentLife = Mathf.Clamp(newLife, 0, maxLife);
+        currentLife = Mathf.Clamp(newLife, 0, maxLife);
 
         // Optionally, you can perform actions based on the new life value
-        if (_currentLife <= 0)
+        if (currentLife <= 0)
         {
             // Handle the object's death here
         }
@@ -39,14 +40,11 @@ public class LifeSystem : MonoBehaviour
 
     public void Decrease(int damage)
     {
-        _currentLife -= damage;
+        currentLife -= damage;
 
         // Check if the object's life has reached zero or less
-        if (_currentLife <= 0)
-        {
-            // Handle the object's death (e.g., destroy the object)
-            Destroy(gameObject);
-            lifeReachedMin.Invoke();
-        }
+        if (currentLife <= 0) return;
+        Destroy(gameObject);
+        lifeReachedMin.Invoke();
     }
 }

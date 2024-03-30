@@ -164,8 +164,8 @@ MonoBehaviour:
   distance: 10
   craft: {fileID: 4729789810958578179, guid: e2914673540a17e498d9405a6534b912, type: 3}
   buy: {fileID: 7223501389534758956, guid: 020471654c5356b459ee9cfb7a6bbc9e, type: 3}
-  harvestTree: {fileID: 0}
-  harvestRock: {fileID: 0}
+  harvestTree: {fileID: 7907789910569857954, guid: 559f95692c573724097bc8f859f30709, type: 3}
+  harvestRock: {fileID: 2231545707702876386, guid: 2e9cce950aabbee4a9d6b23c03e87f4a, type: 3}
 --- !u!1 &4359213262409435737
 GameObject:
   m_ObjectHideFlags: 0
